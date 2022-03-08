@@ -1,0 +1,238 @@
+
+main{
+    font-family: Montserrat;
+
+}
+.banner{
+    background-image: url(../img/musicos.jpg);
+    background-size: cover;
+    font-family: Montserrat;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.banner{
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+.formularios{
+    margin-top: 30px;
+    margin-bottom: 100px;
+}
+
+.parceiro{
+    font-family: Montserrat;
+    color: #666666;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: left;
+    width: 34%;
+}
+
+input[type=text], select {
+    width: 100%;
+    padding: 5px 20px;
+    margin: 10px 0px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    box-sizing:border-box;
+    font-size: 14px;
+}
+
+input[type=password], select {
+    width: 100%;
+    padding: 5px 20px;
+    margin: 10px 0px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    box-sizing:border-box;
+    font-size: 14px;
+}
+
+
+input[type=email], select {
+    width: 100%;
+    padding: 5px 20px;
+    margin: 10px 0px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    box-sizing:border-box;
+    font-size: 14px;
+}
+
+input[type=date], select {
+    width: 100%;
+    padding: 5px 20px;
+    margin: 10px 0px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    box-sizing:border-box;
+    font-size: 14px;
+}
+
+input[type=file], select {
+    width: 100%;
+    padding: 5px 20px;
+    margin: 16px 0px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    box-sizing:border-box;
+    font-size: 14px;
+    text-decoration: none; 
+}
+
+
+input[type=file]{
+    font-display: Montserrat;
+    color: #666666;
+}
+
+.options {
+   font-family: Montserrat;
+   max-height: 3000px;
+   border-radius: 0%;
+   background-color: #edeff2;
+   color: #666666;
+}
+
+.estado{
+    font-family: Montserrat;
+    max-height: 3000px;
+    border-radius: 0%; 
+    background-color: #edeff2;
+    color: #666666;
+ }
+
+ .sobrevc {
+    font-family: Montserrat;
+    background-color: #edeff2;
+    color: #666666;
+    height: 100px;
+    border-radius: 10%;
+ }
+
+ .caixa-texto{
+    font-family: Montserrat;
+    background-color: #edeff2;
+    color: #666666;
+    width: 100%;
+    margin: 16px 0px;
+ }
+
+.parceiro h2{
+    text-align: center;
+    font-family: Montserrat;
+    color: #E01747;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 20%;
+    margin-top: 10%;
+}
+
+
+.formularios{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.sou-novo h2{
+    text-align: center;
+    font-family: Montserrat;
+    color: #E01747;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 20%;
+    margin-top: 10%;
+}
+
+.sou-novo{
+    font-family: Montserrat;
+    color: #666666;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: left;
+    width: 34%;
+}
+
+.botao{
+    background: #E01747;
+    border: none;
+    color: white;
+    border-radius: 30px;
+    padding: 8px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%;
+    margin-bottom: 16%;
+    margin-top: 4%;
+}
+
+
+.botao-salvar{
+    background: #E01747;
+    border: none;
+    color: white;
+    border-radius: 30px;
+    padding: 8px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%;
+    margin-bottom: 16%;
+    margin-top: 4%;
+}
+
+
+
+@media(max-width: 950px)
+{
+    .titulo{
+        padding-top: 40%;
+        font-size: 25px;
+    }
+
+    .form-1 p{
+        line-height: 20px;
+
+    }
+
+    .grid-galeria{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    input[type=image], select {
+        padding: 20% 10% 20% 10%;
+
+    }   
+
+    .formularios{
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+    }
+
+    .sou-novo{
+        margin-bottom: 20%;
+    }
+
+    .parceiro h2{
+        padding-top: 50px;
+    }
+
+    .options {
+        padding-top: 0;
+        padding-bottom: 0;
+        font-family: Montserrat;
+        max-height: 3000px;
+        border-radius: 0%;
+        background-color: #edeff2;
+        color: #666666;
+     }
+}

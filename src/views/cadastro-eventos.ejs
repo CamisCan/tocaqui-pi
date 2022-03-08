@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/cadastro-eventos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <title>Cadastro Evento</title>
+</head>
+
+<body>
+<%- include('./partials/header')%>
+    <main>
+        <section class="margem">
+
+        <div class="cadastro-evento">
+
+            <h2>Cadastrar Evento</h2>
+            <form class="form">
+            <label for="nome-do-evento">Nome do evento:</label>
+            <input type="text" name="nome-do-evento" id="nome-do-evento"><br>
+
+            <label for="data-do-evento">Data do evento:</label>
+            <input type="data" name="data-do-evento" id="data-do-evento"><br>
+
+            <label for="estilo-musical">Estilo musical:</label>
+            <input type="text" name="estilo-musical" id="estilo-musical"><br>
+
+            <label for="musicistas-participantes">Musicistas participantes:</label><br>
+            <input type="text" name="musicistas-participantes" id="musicistas-participantes">
+            </form>
+        </div>
+
+        <div class="galeria">
+        <h3>Galeria</h3>
+        
+        <div class="fotos">
+            <input type="image" name="image" id="image" value="+ Carregar fotos ou vídeos">
+            <input type="image" name="image" id="image" value="+ Carregar fotos ou vídeos">
+            <input type="image" name="image" id="image" value="+ Carregar fotos ou vídeos">
+            <input type="image" name="image" id="image" value="+ Carregar fotos ou vídeos">
+            <input type="image" name="image" id="image" value="+ Carregar fotos ou vídeos">
+            <input type="image" name="image" id="image" value="+ Carregar fotos ou vídeos">
+            <input type="image" name="image" id="image" value="+ Carregar fotos ou vídeos">
+            <input type="image" name="image" id="image" value="+ Carregar fotos ou vídeos">
+            <input type="image" name="image" id="image" value="+ Carregar fotos ou vídeos">
+            <input type="image" name="image" id="image" value="+ Carregar fotos ou vídeos">
+            <input type="image" name="image" id="image" value="+ Carregar fotos ou vídeos">
+            <input type="image" name="image" id="image" value="+ Carregar fotos ou vídeos">
+        </div>
+        </div>
+
+        <button class="botao">Publicar</button>
+        </div>
+
+        <div class="eventos">
+            <h3>Veja os eventos perto de você</h3>
+
+            <div class="cards">
+
+                <div class="card-1">
+                <img src="/img/u-2.jpg" alt="">
+                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni.</p>
+                </div>
+
+                <div class="card-2">
+                <img src="/img/david-bowie.jpg" alt="">
+                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni.</p>
+                </div>
+
+                <div class="card-3">
+                <img src="/img/REM.jpg" alt="">
+                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni.</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</section>
+</main>
+<%- include('./partials/footer')%>
+</body>
+</html>

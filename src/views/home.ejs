@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <title>Home</title>
+</head>
+
+<body>
+
+<%- include('./partials/header')%>
+
+<main>
+
+<div class="titulo">
+  <h1>Encontre e contrate os melhores músicos próximos de você!<br>
+    Todos os estilos de música em um só lugar.</h1>
+    <div class="menu-banner">
+    <input type="text" name="cidade" value="Qual estilo desejado?">
+    <input type="text" name="cidade" value="Em qual cidade?">
+    <button>Buscar</button>
+    </div>
+</div>
+
+<section>
+  <div class="musicos-destaques"> 
+    <h2>Músicos em destaque</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
+  </div>
+
+  <div class="carrossel">
+      <img src="../img/naty" alt="">
+      <img src="../img/fernando.jpg" alt="">
+      <img src="../img/james.jpg" alt="">
+      <img src="../img/samuel.jpg" alt="">
+  </div>
+  <div class="button-visualizar">
+  <button>Visualizar mais...</button>
+  </div>
+</section>
+
+<section class="buscados">
+  <div class="mais-buscados">
+    <h2>Estilos mais buscados</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
+  </div>
+  <div class="estilos">
+    <div>
+      <img src="../img/rcck.svg" alt=""><p>Rock</p>
+    </div>
+    <div>
+      <img src="../img/jazz.svg" alt=""><p>Jazz</p>
+    </div>
+    <div>
+      <img src="../img/samba.svg" alt=""><p>Samba</p>
+    </div>
+    <div>
+      <img src="../img/mpb.svg" alt=""><p>MPB</p>
+    </div>
+    <div>
+      <img src="../img/sertanejo.svg" alt=""><p>Sertanejo</p>
+    </div>
+  </div>
+  <div class="button-buscados">
+    <button>Visualizar mais...</button>
+    </div>
+</section>
+
+<section class="facil">
+
+  <div class="video-texto">
+    <div>
+      <a href="https://youtu.be/ewZ_YWbIWXI"><img src="../img/play-video-jpg.png" alt=""></a>
+    </div>
+    <div>
+      <h2>Veja como é fácil fazer parte!</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut laboreLorem ipsum dolor.</p>
+      <a href="/como-funciona"><button>Quero fazer parte!</button></a>
+    </div>
+  </div>
+</section>
+
+<section class="cinco-motivos">
+
+  <div class="motivos">
+
+    <div class="titulo-motivos">
+      <h2>5 motivos para você fazer parte da TOCAQUI</h2>
+    </div>
+
+  <div class="items">
+    <li>1º It is a long established fact that a reader will be distracted by the.</li>
+    <li>2º It is a long established fact that a reader will be distracted by the.</li>
+    <li>3º It is a long established fact that a reader will be distracted by the.</li>
+    <li>4º It is a long established fact that a reader will be distracted by the.</li>
+    <li>5º It is a long established fact that a reader will be distracted by the.</li>
+  </div>
+  </div>
+</section>
+
+<section>
+  <div class="parceiros">
+    <h2>Conheça nossos parceiros</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
+  </div>
+
+  <div class="fotos">
+    <img src="../img/01.png" alt="">
+    <img src="../img/02.png" alt="">
+    <img src="../img/03.png" alt="">
+    <img src="../img/04.png" alt="">
+    <img src="../img/05.png" alt="">
+  </div>
+
+  <div>
+    <a href="/cadastro-estabelecimento"><button class="button-parceiros">Quero me tornar um parceiros</button></a>
+  </div>
+</section>
+
+<section class="fundo-depoimento">
+  <div class="depoimentos">
+    <h2>Veja a opinião de quem já usou a plataforma!</h2>
+  </div>
+
+  <div class="cliente">
+    <img src="../img/depoimento.jpg" alt="">
+    <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.”</p>
+  </div>
+</section>
+
+</main>
+
+<%- include('./partials/footer')%>
+
+</body>
+</html>

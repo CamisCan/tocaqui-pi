@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/login-musico.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <title>Login</title>
+</head>
+
+<body>
+ 
+<%- include('./partials/header')%>
+
+    <main>
+        <div class="banner">Cadastro Músico</div>
+        <div class="formularios">
+        <div class="parceiro">
+        <div><h2>Já sou parceiro</h2></div>
+            <div>
+                <form action="/musico/login" method="post" required>
+                    <label>E-mail:</label>
+                    <input type="email" name="email" id="email" required>
+
+                    <label>Digite sua senha</label>
+                    <input type="password" name="senha" id="senha" required>
+                
+                <p>Esqueceu sua senha? <a href="#">Clique aqui</a></p>
+                <button class="botao">Entrar!</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="sou-novo">
+        <div><h2>Sou novo por aqui e quero me tornar um parceiro</h2></div>
+        <form 
+        action="/musico/cadastrar" method="post" class="formulario-1">
+            <div>
+            
+            <label>Nome completo:</label>
+            <input type="text" name="nome_completo" id="nome_completo" required>
+
+            <label>Nome artístico:</label>
+            <input type="text" name="nome_artistico" id="nome_artistico" required>
+            
+            <label class="sobre_vc">Fale um pouco sobre você:</label><br>
+            <textarea class="caixa-texto" name="sobre_vc" id="sobre_vc" cols="30" rows="10" placeholder="Sobre mim..." required></textarea><br>
+
+            <label>Foto de perfil:</label>
+            <input type="file" name="foto" id="foto" required><br>
+
+            <label>Email:</label>
+            <input type="email" name="email" id="email" required>
+
+            <label>Data de nascimento:</label>
+            <input type="date" name="data_nascimeto" id="data_nascimento" required>
+        
+            <label>Cidade:</label>
+            <input type="text" name="cidade" id="cidade" required>
+
+            <div class="estados">
+                <label for="estados">Estado:</label><br>
+                <select class="estado" name="estado" id="estado">
+                    <option value="1">AC</option>
+                    <option value="2">AL</option>
+                    <option value="3">AP</option>
+                    <option value="4">AM</option>
+                    <option value="5">BA</option>
+                    <option value="6">CE</option>
+                    <option value="7">DF</option>
+                    <option value="8">ES</option>
+                    <option value="9">GO</option>
+                    <option value="10">MA</option>
+                    <option value="11">MT</option>
+                    <option value="12">MS</option>
+                    <option value="13">MG</option>
+                    <option value="14">PA</option>
+                    <option value="15">PB</option>
+                    <option value="16">PR</option>
+                    <option value="17">PE</option>
+                    <option value="18">PI</option>
+                    <option value="19">RJ</option>
+                    <option value="20">RN</option>
+                    <option value="21">RS</option>
+                    <option value="22">RO</option>
+                    <option value="23">RR</option>
+                    <option value="25">SC</option>
+                    <option value="26">SP</option>
+                    <option value="27">SE</option>
+                    <option value="28">TO</option>
+
+                </select>
+            </div>
+
+        <div class="estilos">
+            <label for="estilo_musical">Quais os seus estilos musicais?</label><br>
+            <select class="options" name="estilo_musical" id="estilo_musical" multiple>
+                <option value="1">Blues</option>
+                <option value="2">Classico</option>
+                <option value="3">Country</option>
+                <option value="4">Eletrônico</option>
+                <option value="5">Folk</option>
+                <option value="6">Forró</option>
+                <option value="7">Funk</option>
+                <option value="8">Gospel</option>
+                <option value="9">Jazz</option>
+                <option value="10">K-Pop</option>
+                <option value="11">Latino</option> 
+                <option value="12">Metal</option>
+                <option value="13">Pagode</option>
+                <option value="14">Pop</option>
+                <option value="15">Rap</option>
+                <option value="16">Reggae</option>
+                <option value="17">Rock</option>
+                <option value="18">Samba</option>
+                <option value="19">Sertanejo</option>
+                <option value="20">Soul</option>
+            </select>
+        </div>
+
+            
+            <label>Senha:</label>
+            <input type="password" name="senha" id="senha" required>
+
+            <button class="botao-salvar">Salvar!</button>
+            </div>
+        </form>
+        </div>
+        </div>
+
+
+    </main>
+
+<%- include('./partials/footer')%>
+</body>
+</html>

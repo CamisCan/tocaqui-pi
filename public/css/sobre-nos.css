@@ -1,0 +1,374 @@
+main{
+    font-family: Montserrat;
+  }
+
+  .titulo{
+    background-image: url(../img/pexels-helena-lopes-1015568.jpg);
+    background-size: cover;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.titulo h1{
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.missao-visao-valores{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.missao-visao-valores img{
+    width: 30%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30%;
+}
+
+.missao-visao-valores h3{
+    font-family: Montserrat;
+    color: #666666;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 15%;
+}
+
+.missao-visao-valores p{
+    font-family: Montserrat;
+    color: #666666;
+    font-size: 14px;
+    text-align: center;
+    max-width: 350px;
+    line-height: 20px;
+    margin-bottom: 30%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15%;
+}
+
+.criadores{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: #F0F0F0;
+}
+
+.criadores img{
+    width: 30%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30%;
+}
+
+.criadores h3{
+    font-family: Montserrat;
+    color: #666666;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 15%;
+}
+
+.criadores p{
+    font-family: Montserrat;
+    color: #666666;
+    font-size: 14px;
+    text-align: center;
+    max-width: 250px;
+    line-height: 20px;
+    margin-bottom: 30%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15%;
+}
+
+
+@media(max-width: 950px)
+{
+    .logo{
+        width: 30%;
+        margin-left: 30%;
+    }
+
+    .menu{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    ol:hover{
+        cursor: pinter;
+        opacity: 0.8;
+    }
+
+    .footer-1{
+        width: 100%;
+        min-height: 100px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .colum-1{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 10%;
+    }
+
+    .colum-2{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .colum-3{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo-rodape{
+        min-width: 22%;
+        text-align: center;
+        align-items: center;
+    }
+
+    .footer-2{
+        text-align: center;
+    }
+
+    .redes-sociais{
+        text-align: center;
+        padding-top: 10%;
+    }
+
+    .copyright{
+        padding-bottom: 10%;
+        font-size: 12px;
+        size: 50px;
+    }
+
+    .button-responsivo{
+        display: flex;
+        font-size: 30px;
+        padding-top: 70px;
+        padding-right: 30px;
+    }
+    
+    .button-responsivo:focus ˜ ol {
+        height: 250px
+
+    }
+
+    .button-responsivo:hover{
+        cursor: pinter;
+        opacity: 0.8;
+        cursor: pointer;
+        color: black
+    }
+
+    .menu{
+        text-align: justify;
+        margin-right: none;
+        background-color: black; opacity: 80%;
+        margin: 0;
+        padding: 0;
+        width: 0;
+        height: 0;
+        font-size: 0;
+    }
+        
+    .botao-estabelecimento{
+        width: 0;
+        height: 0;
+        font-size: 0;
+        padding: 0;
+        margin: 0;
+    }
+
+    .botao-musicista{
+        width: 0;
+        height: 0;
+        font-size: 0;
+        padding: 0;
+        margin: 0;
+    }
+
+    .titulo{
+        padding-top: 40%;
+        font-size: 25px;
+    }
+
+    .cadastro-1{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cadastro-1 img{
+        display: flex;
+        flex-direction: column;
+        width: 30vw;
+    }
+
+    .cadastro-1 h2{
+        display: flex;
+        flex-direction: column;
+        font-size: 4vw;
+        margin-bottom: 3vw;
+    }
+
+
+    .cadastro-2{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cadastro-2 img{
+        display: flex;
+        flex-direction: column;
+        width: 30vw;
+    }
+
+    .cadastro-2 h2{
+        display: flex;
+        flex-direction: column;
+        font-size: 4vw;
+        margin-bottom: 3vw;
+    }
+
+    .cadastro-3{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cadastro-3 img{
+        display: flex;
+        flex-direction: column;
+        width: 30vw;
+    }
+
+    .cadastro-3 h2{
+        display: flex;
+        flex-direction: column;
+        font-size: 4vw;
+        margin-bottom: 3vw;
+    }
+
+    .cadastro-4{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cadastro-4 img{
+        display: flex;
+        flex-direction: column;
+        width: 60vw;
+        margin-top: 3vw;
+    }
+
+    .cadastro-4 h2{
+        display: flex;
+        flex-direction: column;
+        font-size: 4vw;
+        margin-bottom: 3vw;
+        text-align: center;
+    }
+
+    .cadastro-5 {
+        font-family: Montserrat;
+        text-align: center;
+        color: #E01747;
+        font-weight: bold;
+        font-size: 18px;
+        margin-bottom: 2vw;
+        margin-top: 30vw;
+    }
+    
+    .cadastro-5 button{
+        color: white;
+        background-color: #E01747;
+        border: none;
+        padding: 1vw 3vw;
+        border-radius: 3vw;
+        font-size: 18px;
+        font-weight: bold;
+        margin-top: 3vw;
+        margin-bottom: 30vw;
+    }
+    
+    .cinco-motivos{
+        background-image: url(/images/foto-banners/pexels-maurÃ­cio-mascaro-801863.jpg);
+        background-size: cover;
+        font-family: Montserrat;
+        color: white;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .cinco-motivos h2{
+        font-size: 30px;
+        font-weight: bold;
+    }
+    
+    .cinco-motivos ol{
+        line-height: 30px;
+        font-size: 20px;
+        margin-left: 20%;
+        
+    }
+
+    .campo-duvida{
+        background-color: #F0F0F0;
+        padding: 6%;
+        font-family: Montserrat;
+        color: #666666;
+        padding-bottom: 10%;
+        font-size: 14px;
+        padding-top: 20%;
+        padding-bottom: 7%;
+    }
+
+    .missao-visao-valores{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    
+    .missao-visao-valores img{
+        width: 40%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .missao-visao-valores h3{
+        font-family: Montserrat;
+        color: #666666;
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+    }
+    
+    .missao-visao-valores p{
+        font-family: Montserrat;
+        color: #666666;
+        font-size: 14px;
+        text-align: center;
+        max-width: 350px;
+        line-height: 20px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+}
+}

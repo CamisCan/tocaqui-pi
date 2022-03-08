@@ -1,0 +1,292 @@
+
+main{
+    font-family: Montserrat;
+}
+
+.titulo{
+    background-image: url(../img/pexels-miguel-Ã¡-padriÃ±Ã¡n-1591056.jpg);
+    background-size: cover;
+    font-family: Montserrat;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.titulo h1{
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.titulo button{
+    padding-top: 30px;
+    background-color: #E01747;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 20px;
+    padding: 7px 15px 7px 15px;
+ }
+
+ .titulo button{
+    margin-top: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+ }
+ 
+ .destaques h2{
+     color: #E01747;
+     font-size: 20px;
+     font-weight: bold;
+     text-align: center;
+     margin-top: 60px;
+     margin-bottom: 30px;
+ }
+
+ .destaque-1 img{
+     width: 70%;
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+     padding-bottom: 30px;
+ }
+
+ .destaque-1 h3{
+     font-size: 16px;
+     color: #666666;
+     font-weight: bold;
+     text-align: left;
+     margin-left: 20%;
+ }
+
+ .destaque-1 p{
+     font-size: 14px;
+     color: #666666;
+    margin-left: 20%;
+ }
+
+ .destaque-1 button{
+     background-color: #666666;
+     color: white;
+     font-size: 14px;
+     font-weight: bold;
+     padding: 5px 10px 5px 10px;
+     margin-left: 20%;
+     border: none;
+     border-radius: 30px;
+     margin-bottom: 60px;
+ }
+
+ .destaque-2 img{
+     width: 80%;
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+     margin-bottom: 60px;
+ }
+
+ .destaque-1 img{
+     width: 70%;
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+     padding-bottom: 30px;
+ }
+
+ .destaque-1 h3{
+     font-size: 16px;
+     color: #666666;
+     font-weight: bold;
+     text-align: left;
+     margin-left: 20%;
+ }
+
+ .destaque-1 p{
+     font-size: 14px;
+     color: #666666;
+    margin-left: 20%;
+ }
+
+ .destaque-1 button{
+     background-color: #666666;
+     color: white;
+     font-size: 14px;
+     font-weight: bold;
+     padding: 5px 10px 5px 10px;
+     margin-left: 20%;
+     border: none;
+     border-radius: 30px;
+     margin-bottom: 60px;
+ }
+
+ .destaque-3 img{
+    width: 70%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 30px;
+}
+
+.destaque-3 h3{
+    font-size: 16px;
+    color: #666666;
+    font-weight: bold;
+    text-align: left;
+    margin-left: 20%;
+}
+
+.destaque-3 p{
+    font-size: 14px;
+    color: #666666;
+   margin-left: 20%;
+}
+
+.destaque-3 button{
+    background-color: #666666;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px 10px 5px 10px;
+    margin-left: 20%;
+    border: none;
+    border-radius: 30px;
+    margin-bottom: 60px;
+}
+
+.destaque-4 img{
+    width: 70%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 30px;
+}
+
+.destaque-4 h3{
+    font-size: 16px;
+    color: #666666;
+    font-weight: bold;
+    text-align: left;
+    margin-left: 20%;
+}
+
+.destaque-4 p{
+    font-size: 14px;
+    color: #666666;
+   margin-left: 20%;
+}
+
+.destaque-4 button{
+    background-color: #666666;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px 10px 5px 10px;
+    margin-left: 20%;
+    border: none;
+    border-radius: 30px;
+    margin-bottom: 60px;
+}
+
+
+.destaque-1 img{
+     width: 70%;
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+     padding-bottom: 30px;
+ }
+
+ .destaque-1 h3{
+     font-size: 16px;
+     color: #666666;
+     font-weight: bold;
+     text-align: left;
+     margin-left: 20%;
+ }
+
+ .destaque-1 p{
+     font-size: 14px;
+     color: #666666;
+    margin-left: 20%;
+ }
+
+ .destaque-1 button{
+     background-color: #666666;
+     color: white;
+     font-size: 14px;
+     font-weight: bold;
+     padding: 5px 10px 5px 10px;
+     margin-left: 20%;
+     border: none;
+     border-radius: 30px;
+     margin-bottom: 60px;
+ }
+
+ .destaque-5 img{
+    width: 70%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 30px;
+}
+
+.destaque-5 h3{
+    font-size: 16px;
+    color: #666666;
+    font-weight: bold;
+    text-align: left;
+    margin-left: 20%;
+}
+
+.destaque-5 p{
+    font-size: 14px;
+    color: #666666;
+   margin-left: 20%;
+}
+
+.destaque-5 button{
+    background-color: #666666;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px 10px 5px 10px;
+    margin-left: 20%;
+    border: none;
+    border-radius: 30px;
+    margin-bottom: 60px;
+}
+
+.seta-ver-todos p{
+    font-size: 16px;
+    color: #E01747;
+    text-align: left;
+    font-weight: bold;
+    margin-left: 20%;
+    margin-top: 50px;
+}
+
+.seta-ver-todos img{
+    width: 40px;
+}
+
+
+@media(max-width: 950px) {
+
+.destaque-1 p{
+    width: 65%;
+}
+.destaque-3 p{
+    width: 65%;
+}
+.destaque-4 p{
+    width: 65%;
+}
+.destaque-5 p{
+    width: 65%;
+}
+}

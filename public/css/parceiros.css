@@ -1,0 +1,531 @@
+
+main{
+    font-family: Montserrat;
+}
+
+.titulo{
+    background-image: url(../img/pexels-mark-angelo-sampan-1587927.jpg);
+    background-size: cover;
+    font-family: Montserrat;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.titulo a{
+    text-decoration: none;
+}
+
+.button a{
+    text-decoration: none;
+}
+
+.titulo h1{
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.titulo button{
+    padding-top: 30px;
+    background-color: #E01747;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 20px;
+    padding: 7px 15px 7px 15px;
+ }
+
+ .titulo button{
+    margin-top: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+ }
+
+.grid{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.grid h3{
+    font-family: Montserrat;
+    color: #666666;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 8px;
+    text-align: center;
+
+}
+.grid p{
+    font-family: Montserrat;
+    color: #666666;
+    font-size: 12px;
+    margin-bottom: 10px;
+    text-align: center;
+    margin-right: 6%;
+    margin-left: 6%;
+    margin-block-end: auto;
+    line-height: 18px;
+    margin-bottom: 30px;
+}
+
+.grid img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    margin-top: 40px;
+}
+
+
+.cinco-motivos{
+    background-image: url(/img/pexels-maurÃ­cio-mascaro-801863.jpg);
+    background-size: cover;
+    font-family: Montserrat;
+    color: white;
+    display: flex;
+}
+
+.cinco-motivos h2{
+    color: white;
+    padding: 30%;
+    font-size: 30px;
+    font-weight: bold;
+    max-width: 40%;
+    line-height: 40px;
+}
+
+.cinco-motivos ol{
+    line-height: 20px;
+    font-size: 20px;
+    align-content: center;
+    margin-top: 10%;
+    margin-right: 20vw;
+}
+
+.form-1 p{
+    font-family: Montserrat;
+    text-align: center;
+    color: #666666;
+    margin: 3%;
+    font-size: 16px;
+    margin-left: 20vw;
+    margin-right: 20vw;
+    line-height: 2vw;
+}
+
+.form-1{
+    font-family: Montserrat;
+    display: flex;
+    justify-content: space-around;
+    margin: 30px;
+    color: #666666;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+.formulario-1{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 22vw;
+    margin-right: 22vw;
+
+}
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+input[type= number], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+input[type=date], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+input[type=email], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+input[type=tel], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+h2{
+    font-family: Montserrat;
+    text-align: left;
+    font-weight: bold;
+    color: #666666;
+    padding: 3%;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.duvida{
+    font-family: Montserrat;
+    text-align: center;
+    font-weight: bold;
+    color: #E01747;
+    padding: 1%;
+    font-size: 20px;
+    line-height: 20px;
+}
+
+.campo-duvida{
+    background-color: #F0F0F0;
+    padding: 6%;
+    font-family: Montserrat;
+    color: #666666;
+    padding-bottom: 10%;
+    font-size: 14px;
+}
+
+.form-2{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 22vw;
+    margin-right: 22vw;
+}
+
+
+.envie-uma-mensagem{
+    text-align: center;
+    margin: 3%;
+    margin-bottom: 6%;
+}
+
+
+.botao-enviar{
+    background-color: #E01747;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 50px 10px 50px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 2%;
+}
+
+.botao-salvar{
+    background-color: #E01747;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 50px 10px 50px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 2%;
+}
+
+input[type=text-2], select {
+    width: 100%;
+    height: 150px;
+    padding: auto;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f8f8f8;
+    resize: none;
+    margin: 8px 0px;
+}
+
+.botao-fazer-parte{
+    background-color: #E01747;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 50px 10px 50px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 100px;
+}
+
+@media(max-width: 950px)
+{
+    .logo{
+        width: 30%;
+        margin-left: 30%;
+    }
+
+    .menu{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    ol:hover{
+        cursor: pinter;
+        opacity: 0.8;
+    }
+
+    .footer-1{
+        width: 100%;
+        min-height: 100px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .colum-1{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 10%;
+    }
+
+    .colum-2{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .colum-3{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo-rodape{
+        min-width: 22%;
+        text-align: center;
+        align-items: center;
+    }
+
+    .footer-2{
+        text-align: center;
+    }
+
+    .redes-sociais{
+        text-align: center;
+        padding-top: 10%;
+    }
+
+    .copyright{
+        padding-bottom: 10%;
+        font-size: 12px;
+        size: 50px;
+    }
+
+    .button-responsivo{
+        display: flex;
+        font-size: 30px;
+        padding-top: 70px;
+        padding-right: 30px;
+    }
+    
+    .button-responsivo:focus ˜ ol {
+        height: 250px
+
+    }
+
+    .button-responsivo:hover{
+        cursor: pinter;
+        opacity: 0.8;
+        cursor: pointer;
+        color: black
+    }
+
+    .menu{
+        text-align: justify;
+        margin-right: none;
+        background-color: black; opacity: 80%;
+        margin: 0;
+        padding: 0;
+        width: 0;
+        height: 0;
+        font-size: 0;
+    }
+        
+    .botao-estabelecimento{
+        width: 0;
+        height: 0;
+        font-size: 0;
+        padding: 0;
+        margin: 0;
+    }
+
+    .botao-musicista{
+        width: 0;
+        height: 0;
+        font-size: 0;
+        padding: 0;
+        margin: 0;
+    }
+
+    .titulo{
+        padding-top: 40%;
+        font-size: 25px;
+    }
+
+    .cadastro-1{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cadastro-1 img{
+        display: flex;
+        flex-direction: column;
+        width: 30vw;
+    }
+
+    .cadastro-1 h2{
+        display: flex;
+        flex-direction: column;
+        font-size: 4vw;
+        margin-bottom: 3vw;
+    }
+
+
+    .cadastro-2{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cadastro-2 img{
+        display: flex;
+        flex-direction: column;
+        width: 30vw;
+    }
+
+    .cadastro-2 h2{
+        display: flex;
+        flex-direction: column;
+        font-size: 4vw;
+        margin-bottom: 3vw;
+    }
+
+    .cadastro-3{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cadastro-3 img{
+        display: flex;
+        flex-direction: column;
+        width: 30vw;
+    }
+
+    .cadastro-3 h2{
+        display: flex;
+        flex-direction: column;
+        font-size: 4vw;
+        margin-bottom: 3vw;
+    }
+
+    .cadastro-4{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cadastro-4 img{
+        display: flex;
+        flex-direction: column;
+        width: 60vw;
+        margin-top: 3vw;
+    }
+
+    .cadastro-4 h2{
+        display: flex;
+        flex-direction: column;
+        font-size: 4vw;
+        margin-bottom: 3vw;
+        text-align: center;
+    }
+
+    .cadastro-5 {
+        font-family: Montserrat;
+        text-align: center;
+        color: #E01747;
+        font-weight: bold;
+        font-size: 18px;
+        margin-bottom: 2vw;
+        margin-top: 30vw;
+    }
+    
+    .cadastro-5 button{
+        color: white;
+        background-color: #E01747;
+        border: none;
+        padding: 1vw 3vw;
+        border-radius: 3vw;
+        font-size: 18px;
+        font-weight: bold;
+        margin-top: 3vw;
+        margin-bottom: 30vw;
+    }
+    
+    .cinco-motivos{
+        background-image: url(/img/pexels-maurÃ­cio-mascaro-801863.jpg);
+        background-size: cover;
+        font-family: Montserrat;
+        color: white;
+        display: flex;
+        flex-wrap: wrap;
+        padding-bottom: 100px;
+    }
+    
+    .cinco-motivos h2{
+        font-size: 30px;
+        font-weight: bold;
+    }
+    
+    .cinco-motivos ol{
+        line-height: 30px;
+        font-size: 20px;
+        margin-left: 20%;
+        
+    }
+
+    .campo-duvida{
+        background-color: #F0F0F0;
+        padding: 6%;
+        font-family: Montserrat;
+        color: #666666;
+        padding-bottom: 10%;
+        font-size: 14px;
+        padding-top: 20%;
+        padding-bottom: 20%;
+    }
+}
