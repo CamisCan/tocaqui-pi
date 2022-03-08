@@ -50,12 +50,12 @@ const musicosController = {
         const meuMusico = objeto.musicos.find(musico => musico.email == req.body.email)
         
         if (!meuMusico) 
-        return res.render('error');
+        return res.render('error-musico');
 
         const senhaEstaCorreta = bcrypt.compareSync(req.body.senha, meuMusico.senha)
 
         if (!senhaEstaCorreta) {
-        return res.render('error');
+        return res.render('error-musico');
         }
 
         delete meuMusico.senha;

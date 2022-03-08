@@ -50,12 +50,12 @@ const estabelecimentosController = {
         const meuEstabelecimento = objeto.estabelecimentos.find(estabelecimento => estabelecimento.email == req.body.email)
         
         if (!meuEstabelecimento) 
-        return res.render('error');
+        return res.render('error-estabelecimento');
 
         const senhaEstaCorreta = bcrypt.compareSync(req.body.senha, meuEstabelecimento.senha)
 
         if (!senhaEstaCorreta) {
-        return res.render('error');
+        return res.render('error-estabelecimento');
         }
 
         delete meuEstabelecimento.senha;

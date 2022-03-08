@@ -1,10 +1,15 @@
 const express = require('express');
+
 const musicoEstaLogado = require('../middlewares/musicoEstaLogado');
+const estabelecimentoEstaLogado = require('../middlewares/estabelecimentoEstaLogado');
+
 const uploadFotos = require('../middlewares/uploadFotos');
 
 const router = express.Router();
 
 router.use(musicoEstaLogado);
+router.use(estabelecimentoEstaLogado);
+
 
 router.get('/',  (req, res) => {
     res.render('home')
@@ -30,30 +35,34 @@ router.get('/blog',  (req, res) => {
     res.render('blog')
 });
 
+
+//Musico//
+
 router.get('/login-musico',  (req, res) => {
     res.render('login-musico')
-});
-
-router.get('/login-estabelecimento',  (req, res) => {
-    res.render('login-estabelecimento')
 });
 
 router.get('/musico-criado',  (req, res) => {
     res.render('musico-criado')
 });
 
-router.get('/estabelecimento-criado',  (req, res) => {
-    res.render('estabelecimento-criado')
-});
-
 router.get('/musico/perfil-musico',  (req, res) => {
     res.render('perfil-musico')
 });
 
-router.get('/estebelecimento/perfil-estabelecimento',  (req, res) => {
-    res.render('perfil-estabelecimento')
+
+//Estabelecimento//
+
+router.get('/login-estabelecimento',  (req, res) => {
+    res.render('login-estabelecimento')
 });
 
+router.get('/estabelecimento-criado',  (req, res) => {
+    res.render('estabelecimento-criado')
+}); 
 
+router.get('/estabelecimento/perfil-estabelecimento',  (req, res) => {
+    res.render('perfil-estabelecimento')
+});
 
 module.exports = router;
