@@ -41,3 +41,7 @@ main{
 .link{
     text-decoration: none;
 }
+
+.titulo img{
+    width: 200px;
+}
