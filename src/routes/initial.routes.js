@@ -50,6 +50,9 @@ router.get('/musico/perfil-musico',  (req, res) => {
     res.render('perfil-musico')
 });
 
+router.get('/lista',  (req, res) => {
+    res.render('musico-criado')
+});
 
 //Estabelecimento//
 
@@ -64,5 +67,7 @@ router.get('/estabelecimento-criado',  (req, res) => {
 router.get('/estabelecimento/perfil-estabelecimento',  (req, res) => {
     res.render('perfil-estabelecimento')
 });
+
+
 
 module.exports = router;

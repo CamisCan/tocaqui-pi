@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pizzas para editar</title>
+</head>
+
+<body>
+  <main>
+    <h1>Lista de pizzas para editar</h1>
+    <ul>
+      <% pizzas.forEach(pizza => { %>
+        <li><%= pizza.nome %> / R$ <%= pizza.preco %></li>
+        <p>Descrição: <%= pizza.descricao %></p>
+        <img src="<%= pizza.imagem %>" alt="Foto de uma pizza de <%= pizza.nome %>">
+        <p>Ingredientes</p>
+        <ul>
+          <% pizza.ingredientes.forEach(ingrediente => { %>
+            <li><%= ingrediente %> </li>
+          <% }) %>
+        </ul>
+        <a href="/pizzas/<%= pizza.id %>">Editar pizza</a>
+        <form action="/pizzas/<%= pizza.id %>" method="post">
+          <button type="submit">Apagar pizza</button>
+        </form>
+      <% }) %>
+    </ul>
+  </main>
+</body>
+
+</html>

@@ -31,7 +31,8 @@ const musicosController = {
         fs.writeFileSync(path.join(__dirname, '..', 'database', 'db.json'), objetoEmString);
     
         console.log(req.body)
-        res.send(objeto.musico)
+        //res.send(objeto.musico)
+        res.redirect('/musico-criado');
 
     },
 
@@ -62,9 +63,14 @@ const musicosController = {
         req.session.musico = meuMusico;
 
         console.log(req.session)
-
+ 
         res.redirect('perfil-musico')
     },
+
+exibeListaMusicos: (req, res) => {
+    res.render('lista/musicos');
+}
+
 };
 
 module.exports = musicosController;

@@ -33,14 +33,16 @@ const estabelecimentosController = {
         fs.writeFileSync(path.join(__dirname, '..', 'database', 'db.json'), objetoEmString);
     
         console.log(req.body)
-        res.send(objeto.estabelecimento)
+        //res.send(objeto.estabelecimento)
+        res.redirect('/estabelecimento-criado');
+
     },
     exibeFormularioCadastroEstabelecimento: (req, res) => {
         res.render('estabelecimento-criado');
     },
 
     exibeFormulariologinEstabelecimento: (req, res) => {
-        res.render('login');
+        res.render('login'); 
     },
 
     fazerLoginEstabelecimento: (req, res) => {
@@ -64,7 +66,12 @@ const estabelecimentosController = {
         console.log(req.session)
 
         res.redirect('perfil-estabelecimento')
+    },
+
+    exibeListaEstabelecimentos: (req, res) => {
+        res.render('lista/estabelecimentos');
     }
+
 };
 
 module.exports = estabelecimentosController;

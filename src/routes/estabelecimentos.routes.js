@@ -10,8 +10,7 @@ router.post('/cadastrar', estabelecimentosController.cadastrar);
 router.get('/login', estabelecimentosController.exibeFormulariologinEstabelecimento);
 router.post('/login', estabelecimentosController.fazerLoginEstabelecimento);
 
-router.get('/estabelecimento/perfil-estabelecimento',  (req, res) => {
-    res.render('/estabelecimento/perfil-estabelecimento')
-});
+router.get('lista/estabelecimentos', estabelecimentosController.exibeListaEstabelecimentos);
+
 
 module.exports = router; 

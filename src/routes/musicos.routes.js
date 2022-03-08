@@ -7,12 +7,10 @@ const router = express.Router();
 router.get('/cadastrar', musicosController.exibeFormularioCadastroMusico);
 router.post('/cadastrar', musicosController.cadastrar);
 
-
 router.get('/login', musicosController.exibeFormulariologinMusico);
 router.post('/login', musicosController.fazerLoginMusico);
 
-router.get('/musico/perfil-musico',  (req, res) => {
-    res.render('/musico/perfil-musico')
-});
+router.get('lista/musicos', musicosController.exibeListaMusicos);
+
 
 module.exports = router; 
