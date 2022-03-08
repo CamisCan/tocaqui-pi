@@ -1,13 +1,254 @@
+
 main{
   font-family: Montserrat;
 }
 
 .minha-pagina h1{
-text-align: center;
-font-family: Montserrat;
-color: #E01747;
-font-weight: bold;
-font-size: 16px;
-margin-bottom: 6%;
-margin-top: 10%;
+  color: #E01747;
+  font-size: 20px;
+  text-align: center;
+  padding-top: 100px;
+  padding-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.perfil p{
+    padding-top: 3%;
+    font-size: 12px;
+    color: #535353;
+    width: 70%;
+    line-height: 20px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .sobre-mim{
+    padding-top: 3%;
+    font-size: 16px;
+    color: #535353;
+    width: 70%;
+    line-height: 20px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+.perfil img{
+ width: 200px;
+ margin-top: -100px;
+}
+
+.name{
+  color: #E01747;
+  font-size: 20px;
+  text-align: center;
+  padding-top: 250px;
+  padding-bottom: 10px;
+} 
+
+.name input{
+  width: 80%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  left: 30px;
+  right: 30px;
+  border-radius: 10px;
+} 
+
+.name input {
+  font-family: Montserrat;
+  font-size: 12px;
+  color: #666666;
+}
+
+
+.ultimas-apresentacaoes h3{
+  color: #666666;
+  font-size: 16px;
+  text-align: center;
+  margin-top: 150px;
+  margin-bottom: 50px;
+
+}
+
+
+.cards{
+  display: flex;
+  justify-content: space-around;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.card-1 img{
+  display: flex;
+  align-content: space-between;
+  width: 70%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3px;
+}
+
+.card-2 img{
+  display: flex;
+  align-content: space-between;
+  width: 70%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3px;
+}
+
+.card-3 img{
+  display: flex;
+  align-content: space-between;
+  width: 70%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3px;
+}
+
+.card-1 p{
+  padding-top: 3%;
+  font-size: 12px;
+  color: #535353;
+  width: 70%;
+  line-height: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card-2 p{
+  padding-top: 3%;
+  font-size: 12px;
+  color: #535353;
+  width: 70%;
+  line-height: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card-3 p{
+  padding-top: 3%;
+  font-size: 12px;
+  color: #535353;
+  width: 70%;
+  line-height: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.avaliacoes h3{
+  color: #666666;
+  font-size: 16px;
+  text-align: center;
+  margin-top: 150px;
+  margin-bottom: 50px;
+}
+
+.selos{
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+}
+
+.selo-1 img{
+  width: 150px;
+}
+
+.selo-2 img{
+  width: 150px;
+}
+
+.selo-3 img{
+  width: 150px;
+}
+
+.nomes{
+  font-size: 14px;
+  color: #535353;
+}
+
+.selos p{
+  font-size: 12px;
+  color: #535353;
+  width: 50%;
+  line-height: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30%;
+}
+.stars{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+
+.stars img{
+  width: 5%;
+  margin: 0.50%;
+}
+
+@media (max-width: 1060px) {
+  .menu ol{
+      display: flex;
+      flex-direction: column;
+  }
+
+
+.name h3{
+  margin-top: 50px;
+}
+
+.name input{
+  margin-top: 10px;
+}
+
+.cards{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.selos{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.card-1{
+  width: 80%;
+  margin-bottom: 80px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card-2{
+  width: 80%;
+  margin-bottom: 80px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card-3{
+  width: 80%;
+  margin-bottom: 80px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
 }

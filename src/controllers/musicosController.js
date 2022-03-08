@@ -64,11 +64,15 @@ const musicosController = {
 
         console.log(req.session)
  
-        res.redirect('perfil-musico')
+        res.redirect('perfil-musico');
     },
 
 exibeListaMusicos: (req, res) => {
-    res.render('lista/musicos');
+    const arquivo = fs.readFileSync(path.join(__dirname, '..', 'database', 'db.json'), {encoding: 'utf-8'});
+    const objeto = JSON.parse(arquivo)
+    const musico = objeto.musicos;
+
+    res.render('/perfil-musico', {musicos: musico});
 }
 
 };
