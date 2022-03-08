@@ -13,6 +13,10 @@ main{
   margin-right: auto;
 }
 
+.banner{
+  background-image: url(/public/img/foto-capa-madame-sata.png);
+}
+
 .perfil p{
     padding-top: 3%;
     font-size: 12px;
@@ -143,6 +147,14 @@ main{
   line-height: 20px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.avaliacoes h3{
+  color: #666666;
+  font-size: 16px;
+  text-align: center;
+  margin-top: 150px;
+  margin-bottom: 50px;
 }
 
 .avaliacoes h3{
