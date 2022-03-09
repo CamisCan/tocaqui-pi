@@ -2,8 +2,10 @@ const express = require('express');
 
 const musicoEstaLogado = require('../middlewares/musicoEstaLogado');
 const estabelecimentoEstaLogado = require('../middlewares/estabelecimentoEstaLogado');
+const musicoController = require ('../controllers/musicosController')
 
 const uploadFotos = require('../middlewares/uploadFotos');
+const { exibeMusico } = require('../controllers/musicosController');
 
 const router = express.Router();
 
@@ -46,9 +48,7 @@ router.get('/musico-criado',  (req, res) => {
     res.render('musico-criado')
 });
 
-router.get('/musico/perfil-musico',  (req, res) => {
-    res.render('perfil-musico')
-});
+router.get('/musico/perfil-musico', musicoController.exibeMusico);
 
 router.get('/lista',  (req, res) => {
     res.render('musico-criado')

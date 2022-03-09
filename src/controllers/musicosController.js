@@ -2,8 +2,6 @@ const fs =require('fs');
 const path = require('path');
 const bcrypt = require('bcrypt'); 
 
-const router = require('../routes/musicos.routes');
-
 const musicosController = {
     cadastrar: (req, res) => {
         const saltRounds = 10;
@@ -70,9 +68,21 @@ const musicosController = {
 exibeListaMusicos: (req, res) => {
     const arquivo = fs.readFileSync(path.join(__dirname, '..', 'database', 'db.json'), {encoding: 'utf-8'});
     const objeto = JSON.parse(arquivo)
-    const musico = objeto.musicos;
+    const musicos = objeto.musicos;
 
-    res.render('/perfil-musico', {musicos: musico});
+    res.render('perfil-musico', {musicos: musico});
+},
+
+exibeMusico: (req, res) => {
+    const arquivo = fs.readFileSync(path.join(__dirname, '..', 'database', 'db.json'), {encoding: 'utf-8'});
+    const objeto = JSON.parse(arquivo)
+    const musicos = objeto.musicos;
+    const musico = musicos.find(m => m.email === req.session.musico.email);
+
+    console.log(musico);
+    
+
+    res.render('perfil-musico', {musicos: musico});
 }
 
 };
