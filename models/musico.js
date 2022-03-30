@@ -14,12 +14,17 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Musico.init({
-    nome: DataTypes.STRING
+    cpf: DataTypes.STRING,
+    nome_completo: DataTypes.STRING,
+    nome_artistico: DataTypes.STRING,
+    sobre_voce: DataTypes.STRING,
+    data_cascimento: DataTypes.DATE,
+    estilo_musical: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Musico',
-    tableName: 'Musicos', 
-    freezeTableName: true
+    tableName: 'musicos',
+    timestamps: false
   });
   return Musico;
 };
