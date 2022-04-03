@@ -1,33 +1,31 @@
 const fs =require('fs');
 const path = require('path');
 const bcrypt = require('bcrypt'); 
-const musico = require('../models/musico');
+
+const { Musico } = require('../models');
+
+const saltRounds = 10;
 
 const musicosController = {
-  cadastrar: (req, res) => {
-    const saltRounds = 10;
-    const hash = bcrypt.hashSync(req.body.senha, saltRounds);
-  
-    const novoMusico = {
-    nome_completo: req.body.nome_completo,
-    nome_artistico: req.body.nome_artistico,
-    sobre_vc: req.body.sobre_vc,
-    email: req.body.email,
-    data_nascimento: req.body.data_nascimento,
-    cidade: req.body.cidade,
-    estado: req.body.estado,
-    estilo_musical: req.body.estilo_musical,
-    senha: hash,
-    eh_admin: false,
-    imagem: req.file.filename
-    }
+  cadastrar: async (req, res) => {
+    const { nome_completo, cpf, nome_artistico, sobre_vc, email, data_nascimento, cidade, estado, estilo_musical, senha} = req.body;
     
-    musico.create(novoMusico);
-    
-    console.log(req.body);
-    //res.send(objeto.musico)
-    res.redirect('/musico-criado');
+    const hash = bcrypt.hashSync(senha, saltRounds);
 
+    const novoMusico = await Musico.create({
+      nome_completo: nome_completo,
+      cpf: cpf,
+      nome_artistico: nome_artistico,
+      sobre_vc: sobre_vc,
+      email: email,
+      data_nascimento: data_nascimento,
+      cidade: cidade,
+      estado: estado,
+      estilo_musical: estilo_musical,
+      senha: hash,
+    }).catch (console.log);
+
+    res.send(novoMusico);
   },
 
   exibeFormularioCadastroMusico: (req, res) => {
@@ -38,9 +36,9 @@ const musicosController = {
     res.render('login');
   },
 
-  fazerLoginMusico: (req, res) => {
-   
-    const meuMusico = musico.findByEmail(req.body.email);
+  fazerLoginMusico: async (req, res) => {
+    const { musico, senha } = req.body;
+    const meuMusico = await musico.findByEmail({ where: { email: musico } });
     
     if (!meuMusico) 
     return res.render('error-musico');
@@ -74,7 +72,7 @@ exibeMusico: (req, res) => {
   console.log(musico);
   
 
-  res.render('perfil-musico', {musicos: musico});
+  res.render('perfil-musico', { musicos: musico });
 }
 
 };
