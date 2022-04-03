@@ -10,7 +10,19 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+    Estabelecimento.hasMany(models.Telefone,{
+      as: 'estabelecimento-telefone',
+      foreignKey: 'estabelecimentos_id',
+      onDelete: 'RESTRICT',
+      onUpdate: 'NO ACTION',
+    });
+
+    Estabelecimento.hasMany(models.Endereco, {
+      as: 'estabelecimento_endereco',
+      foreignKey: 'estabelecimento_id',
+      onDelete: 'CASCADE',
+      onUpdate: 'NO ACTION',
+    });
     }
   }
   Estabelecimento.init({
@@ -42,6 +54,7 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'Estabelecimento',
     tableName: 'estabelecimentos',
+    freezeTableName: true,
     timestamps: false,
   });
   return Estabelecimento;

@@ -10,7 +10,12 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      Endereco.belongsTo(models.Estabelecimento, {
+        as: 'endereco_estabelecimento',
+        foreignKey: 'estabelecimentos_id',
+        onDelete: 'CASCADE',
+        onUpdate: 'NO ACTION',
+      });
     }
   }
   Endereco.init({
@@ -51,6 +56,7 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'Endereco',
     tableName: 'enderecos',
+    freezeTableName: true,
     timestamps: false,
   });
   return Endereco;

@@ -27,8 +27,8 @@ create(musico){
     const arquivo = fs.readFileSync(path.join(__dirname, '..', 'database', 'db.json'), {encoding: 'utf-8'});
     const objeto = JSON.parse(arquivo)
 
-    objeto.musicos.push(novoMusico);
- const objetoEmString = JSON.stringify(objeto);
+    objeto.musicos.push(musico);
+    const objetoEmString = JSON.stringify(objeto);
 
     fs.writeFileSync(path.join(__dirname, '..', 'database', 'db.json'), objetoEmString);
 
