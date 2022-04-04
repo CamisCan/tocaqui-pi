@@ -33,16 +33,14 @@ const estabelecimentosController = {
         fs.writeFileSync(path.join(__dirname, '..', 'database', 'db.json'), objetoEmString);
     
         console.log(req.body)
-        //res.send(objeto.estabelecimento)
-        res.redirect('/estabelecimento-criado');
-
+        res.send(objeto.estabelecimento)
     },
     exibeFormularioCadastroEstabelecimento: (req, res) => {
         res.render('estabelecimento-criado');
     },
 
     exibeFormulariologinEstabelecimento: (req, res) => {
-        res.render('login'); 
+        res.render('login');
     },
 
     fazerLoginEstabelecimento: (req, res) => {
@@ -52,12 +50,12 @@ const estabelecimentosController = {
         const meuEstabelecimento = objeto.estabelecimentos.find(estabelecimento => estabelecimento.email == req.body.email)
         
         if (!meuEstabelecimento) 
-        return res.render('error-estabelecimento');
+        return res.render('error');
 
         const senhaEstaCorreta = bcrypt.compareSync(req.body.senha, meuEstabelecimento.senha)
 
         if (!senhaEstaCorreta) {
-        return res.render('error-estabelecimento');
+        return res.render('error');
         }
 
         delete meuEstabelecimento.senha;
@@ -66,12 +64,7 @@ const estabelecimentosController = {
         console.log(req.session)
 
         res.redirect('perfil-estabelecimento')
-    },
-
-    exibeListaEstabelecimentos: (req, res) => {
-        res.render('lista/estabelecimentos');
     }
-
 };
 
 module.exports = estabelecimentosController;

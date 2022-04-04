@@ -10,9 +10,27 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
-    }
+      Usuario.hasOne(models.Musico, {
+        as: 'usuario_musico',
+        foreignKey: 'usuario_id',
+        onDelete: 'CASCATE',
+        onUpdate: 'CASCATE'
+      });
+    };
+
+    static associate(models) {
+      Usuario.hasOne(models.Estabelecimento, {
+        as: 'usuario_estabelecimento',
+        foreignKey: 'estabeleciemento_id',
+        onDelete: 'CASCATE',
+        onUpdate: 'CASCATE'
+      });
+    };
+
+
   }
+
+
   Usuario.init({
     foto_perfil: DataTypes.STRING(255),
     email: DataTypes.STRING(255),

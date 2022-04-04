@@ -2,6 +2,7 @@
 const {
   Model
 } = require('sequelize');
+const usuario = require('./usuario');
 module.exports = (sequelize, DataTypes) => {
   class Musico extends Model {
     /**
@@ -10,24 +11,39 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+    Musico.belongsTo(models.Usuario, {
+      as: 'musico_usuario',
+      foreignKey: 'usuario_id',
+      onDelete: 'CASCATE',
+      onUpdate: 'CASCATE',
+    });
+    };
+
+    static associate(models) {
+      Musico.hasOne(models.Mensagem, {
+        as: 'musico_mensagem',
+        foreignKey: 'enviado_por',
+        foreignKey: 'recebido_por',
+        onDelete: 'RESTRICT',
+        onUpdate: 'NO ACTION'
+      });
+      };
+
     }
-  }
-  Musico.init({
-    cpf: DataTypes.STRING,
-    nome_completo: DataTypes.STRING,
-    nome_artistico: DataTypes.STRING,
-    sobre_vc: DataTypes.STRING,
-    data_nascimento: DataTypes.DATEONLY,
-    cidade: DataTypes.STRING,
-    estado: DataTypes.STRING,
-    estilo_musical: DataTypes.STRING
-  }, {
+    Musico.init({
+      nome_completo: DataTypes.STRING(255),
+      cpf: DataTypes.STRING(11),
+      nome_artisitico: DataTypes.STRING(45),
+      data_nascimento: DataTypes.DATEONLY,
+      estilo_musical: DataTypes.STRING
+    }, {
+
     sequelize,
     modelName: 'Musico',
     tableName: 'Musicos',
     freezeTableName: true,
     timestamps: false
   });
+
   return Musico;
 };

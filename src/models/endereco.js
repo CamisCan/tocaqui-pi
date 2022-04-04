@@ -14,45 +14,19 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Endereco.init({
-    logradouro:{
-      type: DataTypes.STRING(100),
-      allowNull: false,
-    },
-    numero:{
-      type: DataTypes.STRING(10),
-      allowNull: false,
-    },
-    complemento:{
-      type:  DataTypes.STRING(100),
-    },
-    cep:{
-      type: DataTypes.STRING(8),
-      allowNull:false,
-    },
-    bairro:{
-      type: DataTypes.STRING(100),
-      allowNull: false,
-    },
-    cidade:{
-      type: DataTypes.STRING(100),
-      allowNull: false,
-    },
-    uf:{
-      type: DataTypes.STRING(2),
-      allowNull: false,
-    },
-    estabelecimentos_id:{
-      type: DataTypes.INTEGER,
-    },
-    musicos_id:{
-      type: DataTypes.INTEGER,
-    },
+    logradouro: DataTypes.STRING(100),
+    numero: DataTypes.STRING(6),
+    complemento: DataTypes.STRING(50),
+    cep: DataTypes.STRING(8),
+    bairro: DataTypes.STRING(100),
+    cidade: DataTypes.STRING(100),
+    estado: DataTypes.STRING(2)
   }, {
     sequelize,
     modelName: 'Endereco',
-    tableName: 'enderecos',
+    tableName: 'Enderecos',
     freezeTableName: true,
-    timestamps: false,
+    timestamps: false
   });
   return Endereco;
 };

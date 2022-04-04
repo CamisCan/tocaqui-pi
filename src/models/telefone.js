@@ -14,26 +14,14 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Telefone.init({
-    ddd:{
-      type:DataTypes.STRING(2),
-      allowNull: false,
-    },
-    telefone: {
-      type:DataTypes.STRING(9),
-      allowNull: false,
-    },
-    estabelecimentos_id:{
-      type:DataTypes.INTEGER,
-    },
-    musicos_id:{
-      type:DataTypes.INTEGER,
-    }, 
+    ddd: DataTypes.STRING(2),
+    telefone: DataTypes.STRING(9)
   }, {
     sequelize,
     modelName: 'Telefone',
-    tableName: 'telefones',
+    tableName: 'Telefones',
     freezeTableName: true,
-    timestamps: false,
+    timestamps: false
   });
   return Telefone;
 };

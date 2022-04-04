@@ -10,40 +10,38 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
-    }
+      Estabelecimento.belongsTo(models.Usuario, {
+        as: 'estabelecimento_usuario',
+        foreignKey: 'usuario_id',
+        onDelete: 'CASCATE',
+        onUpdate: 'CASCATE',
+      });
+      };
+
+      static associate(models) {
+      Estabelecimento.hasOne(models.Mensagem, {
+        as: 'estabelecimento_mensagem',
+        foreignKey: 'enviado_por',
+        foreignKey: 'recebido_por',
+        onDelete: 'RESTRICT',
+        onUpdate: 'NO ACTION'
+      });
+      };
+
   }
   Estabelecimento.init({
-    razao_social:{
-      type: DataTypes.STRING(100),
-      allowNull: false,
-      unique:true,
-    },
-    cnpj:{
-      type: DataTypes.STRING(14),
-      allowNull: false,
-      unique:true,
-    },
-    nome_fantasia:{
-      type:DataTypes.STRING(100),
-      allowNull:false,
-    },
-    sobre_seu_negocio:{
-      type:DataTypes.STRING(100),
-    }, 
-    responsavel_pela_casa:{
-      type: DataTypes.STRING(100),
-      allowNull: false,
-    },
-    site:{
-      type: DataTypes.STRING(100),
-    },
+    razao_social: DataTypes.STRING(100),
+    cnpj: DataTypes.STRING(14),
+    nome_fantasia: DataTypes.STRING(100),
+    sobre_seu_negocio: DataTypes.STRING(),
+    responsavel_pela_casa: DataTypes.STRING(100),
+    site: DataTypes.STRING(100)
   }, {
     sequelize,
     modelName: 'Estabelecimento',
-    tableName: 'estabelecimentos',
+    tableName: 'Estabelecimentos',
     freezeTableName: true,
-    timestamps: false,
+    timestamps: false
   });
   return Estabelecimento;
 };
