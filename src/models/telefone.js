@@ -17,12 +17,24 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Telefone.init({
-    ddd: DataTypes.STRING(2),
-    telefone: DataTypes.STRING(9)
+    ddd:{
+      type:DataTypes.STRING(2),
+      allowNull: false,
+    },
+    telefone: {
+      type:DataTypes.STRING(9),
+      allowNull: false,
+    },
+    estabelecimentos_id:{
+      type:DataTypes.INTEGER,
+    },
+    musicos_id:{
+      type:DataTypes.INTEGER,
+    }, 
   }, {
     sequelize,
     modelName: 'Telefone',
-    tableName: 'Telefones',
+    tableName: 'telefones',
     freezeTableName: true,
     timestamps: false
   });
