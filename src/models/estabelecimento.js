@@ -10,6 +10,7 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
+<<<<<<< HEAD
       Estabelecimento.belongsTo(models.Usuario, {
         as: 'estabelecimento_usuario',
         foreignKey: 'usuario_id',
@@ -28,6 +29,22 @@ module.exports = (sequelize, DataTypes) => {
       });
       };
 
+=======
+    Estabelecimento.hasMany(models.Telefone,{
+      as: 'estabelecimento-telefone',
+      foreignKey: 'estabelecimentos_id',
+      onDelete: 'RESTRICT',
+      onUpdate: 'NO ACTION',
+    });
+
+    Estabelecimento.hasMany(models.Endereco, {
+      as: 'estabelecimento_endereco',
+      foreignKey: 'estabelecimento_id',
+      onDelete: 'CASCADE',
+      onUpdate: 'NO ACTION',
+    });
+    }
+>>>>>>> 0f28dccf0fa3c884c6b7c2e773564efe7e102337
   }
   Estabelecimento.init({
     razao_social: DataTypes.STRING(100),
