@@ -8,7 +8,7 @@ const saltRounds = 10;
 
 const musicosController = {
     cadastrar: async (req, res) => {
-        const {nome_completo, nome_artistico, cpf, sobre_vc, foto_perfil, email, data_nascimento, cidade, estado, estilo_musical, senha } = req.body;
+        const {nome_completo, nome_artistico, cpf, sobre_vc, email, data_nascimento, cidade, estado, estilo_musical, senha } = req.body;
 
         const hash = bcrypt.hashSync(senha, saltRounds);
     
@@ -17,17 +17,15 @@ const musicosController = {
             nome_artistico: nome_artistico,
             cpf: cpf,
             sobre_vc: sobre_vc,
-            foto_perfil: foto_perfil,
             email: email,
             data_nascimento: data_nascimento,
             cidade: cidade,
             estado: estado,
             estilo_musical: estilo_musical,
             senha: hash,
-            eh_admin: false
         });
         
-        res.send(novoMusico)
+        res.send(novoMusico);
 
     },
     
@@ -39,12 +37,11 @@ const musicosController = {
         res.render('login');
     },
 
-    fazerLoginMusico: (req, res) => {
-        const arquivo = fs.readFileSync(path.join(__dirname, '..', 'database', 'db.json'), {encoding: 'utf-8'});
-        const objeto = JSON.parse(arquivo)
+    fazerLoginMusico: async (req, res) => {
+        const { musico, senha } = req.body;
 
-        const meuMusico = objeto.musicos.find(musico => musico.email == req.body.email)
-        
+        const meuMusico = await Musico.findOne({ where: {  email: musico } });
+
         if (!meuMusico) 
         return res.render('error');
 

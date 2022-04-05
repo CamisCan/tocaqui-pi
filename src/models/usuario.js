@@ -16,9 +16,7 @@ module.exports = (sequelize, DataTypes) => {
         onDelete: 'CASCATE',
         onUpdate: 'CASCATE'
       });
-    };
 
-    static associate(models) {
       Usuario.hasOne(models.Estabelecimento, {
         as: 'usuario_estabelecimento',
         foreignKey: 'estabeleciemento_id',
@@ -26,21 +24,19 @@ module.exports = (sequelize, DataTypes) => {
         onUpdate: 'CASCATE'
       });
     };
-
-
+  
   }
-
-
   Usuario.init({
     foto_perfil: DataTypes.STRING(255),
     email: DataTypes.STRING(255),
     senha: DataTypes.STRING(255)
-  }, {
+  },{
     sequelize,
     modelName: 'Usuario',
-    tableName: 'Usuarios',
+    tableName: 'usuarios',
     freezeTableName: true,
     timestamps: false
   });
+  
   return Usuario;
 };

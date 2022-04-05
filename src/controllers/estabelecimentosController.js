@@ -2,39 +2,33 @@ const fs =require('fs');
 const path = require('path');
 const bcrypt = require('bcrypt'); 
 
-const router = require('../routes/estabelecimentos.routes');
+const { Estabelecimento } = require('../models')
+
+const saltRounds = 10;
 
 const estabelecimentosController = {
-    cadastrar: (req, res) => {
-        const saltRounds = 10;
-        const arquivo = fs.readFileSync(path.join(__dirname, '..', 'database', 'db.json'), {encoding: 'utf-8'});
-        const objeto = JSON.parse(arquivo)
+    cadastrar: async (req, res) => {
+        const {razao_social, cnpj, nome_fantasia, sobre_esta, responsavel, email, tel, site, cidade, estado, senha} = req.body;
 
         const hash = bcrypt.hashSync(req.body.senha, saltRounds);
     
-        const novoEstabelecimento = {
-            razao_social: req.body.razao_social,
-            cnpj: req.body.cnpj,
-            nome_fantasia: req.body.nome_fantasia,
-            sobre_esta: req.body.sobre_esta,
-            responsavel: req.body.responsavel,
-            email: req.body.email,
-            tel: req.body.tel,
-            site: req.body.site,
-            cidade: req.body.cidade,
-            estado: req.body.estado,
+        const novoEstabelecimento = await Estabelecimento.create({
+            razao_social: razao_social,
+            cnpj: cnpj,
+            nome_fantasia: nome_fantasia,
+            sobre_esta: sobre_esta,
+            responsavel: responsavel,
+            email: email,
+            tel: tel,
+            site: site,
+            cidade: cidade,
+            estado: estado,
             senha: hash,
-            eh_admin: false
-        }
-    
-        objeto.estabelecimentos.push(novoEstabelecimento);
-        const objetoEmString = JSON.stringify(objeto);
-    
-        fs.writeFileSync(path.join(__dirname, '..', 'database', 'db.json'), objetoEmString);
-    
-        console.log(req.body)
-        res.send(objeto.estabelecimento)
+        });
+
+        res.send(novoEstabelecimento);
     },
+
     exibeFormularioCadastroEstabelecimento: (req, res) => {
         res.render('estabelecimento-criado');
     },
@@ -43,11 +37,10 @@ const estabelecimentosController = {
         res.render('login');
     },
 
-    fazerLoginEstabelecimento: (req, res) => {
-        const arquivo = fs.readFileSync(path.join(__dirname, '..', 'database', 'db.json'), {encoding: 'utf-8'});
-        const objeto = JSON.parse(arquivo)
+    fazerLoginEstabelecimento: async (req, res) => {
+        const { estabelecimento, senha } = req.body;
 
-        const meuEstabelecimento = objeto.estabelecimentos.find(estabelecimento => estabelecimento.email == req.body.email)
+        const meuEstabelecimento = await Estabelecimento.findOne({ where: { email: estabelecimento } });
         
         if (!meuEstabelecimento) 
         return res.render('error');
