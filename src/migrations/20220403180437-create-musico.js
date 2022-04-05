@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Musicos', {
+    await queryInterface.createTable('musicos', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -9,31 +9,33 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       nome_completo: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(100),
+        allowNull: false,
+        unique:false,
       },
       cpf: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(11),
+        allowNull: false,
+        unique:true,
       },
       nome_artisitico: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(45),
+        allowNull: false,
+        unique:true,
       },
       data_nascimento: {
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        allowNull: false,
+        unique:false,
       },
       estilo_musical: {
-        type: Sequelize.STRING
-      },
-      createdAt: {
+        type: Sequelize.STRING(45),
         allowNull: false,
-        type: Sequelize.DATE
+        unique:false,
       },
-      updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      }
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Musicos');
+    await queryInterface.dropTable('musicos');
   }
 };

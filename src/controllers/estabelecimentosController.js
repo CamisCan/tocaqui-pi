@@ -9,12 +9,14 @@ const saltRounds = 10;
 const estabelecimentosController = {
     cadastrar: async (req, res) => {
         const {razao_social, cnpj, nome_fantasia, sobre_esta, responsavel, email, tel, site, cidade, estado, senha} = req.body;
+        const foto_perfil = req.file.filename;
 
         const hash = bcrypt.hashSync(req.body.senha, saltRounds);
     
         const novoEstabelecimento = await Estabelecimento.create({
             razao_social: razao_social,
             cnpj: cnpj,
+            foto_perfil: foto_perfil,
             nome_fantasia: nome_fantasia,
             sobre_esta: sobre_esta,
             responsavel: responsavel,

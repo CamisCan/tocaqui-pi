@@ -10,14 +10,14 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Usuario.hasOne(models.Musico, {
+      Usuario.hasMany(models.Musico, {
         as: 'usuario_musico',
         foreignKey: 'usuario_id',
         onDelete: 'CASCATE',
         onUpdate: 'CASCATE'
       });
 
-      Usuario.hasOne(models.Estabelecimento, {
+      Usuario.hasMany(models.Estabelecimento, {
         as: 'usuario_estabelecimento',
         foreignKey: 'estabeleciemento_id',
         onDelete: 'CASCATE',
@@ -27,9 +27,27 @@ module.exports = (sequelize, DataTypes) => {
   
   }
   Usuario.init({
-    foto_perfil: DataTypes.STRING(255),
-    email: DataTypes.STRING(255),
-    senha: DataTypes.STRING(255)
+      foto_perfil: {
+      Type: DataTypes.STRING(255),
+      allowNull: false,
+      unique:false,
+    },
+    email: {
+      Type: DataTypes.STRING(255),
+      allowNull: false,
+      unique:true,
+    },
+    senha: {
+      Type: DataTypes.STRING(255),
+      allowNull: false,
+      unique:false,
+    },
+    estabelecimentos_id:{
+      type:DataTypes.INTEGER,
+    },
+    musicos_id:{
+      type:DataTypes.INTEGER,
+    }, 
   },{
     sequelize,
     modelName: 'Usuario',

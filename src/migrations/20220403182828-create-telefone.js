@@ -8,22 +8,28 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      ddd: {
-        type: Sequelize.STRING(2),
+      ddd:{
+        type:DataTypes.STRING(2),
         allowNull: false,
       },
       telefone: {
-        type: Sequelize.STRING(9),
+        type:DataTypes.STRING(9),
         allowNull: false,
       },
-      createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE
+      estabelecimentos_id:{
+        type:DataTypes.INTEGER,
+        references: {
+          model: 'estabelecimentos',
+          key: 'id'
+        }
       },
-      updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      }
+      musicos_id:{
+        type:DataTypes.INTEGER,
+        references: {
+          model: 'musicos',
+          key: 'id'
+        }
+      },
     });
   },
   async down(queryInterface, Sequelize) {
