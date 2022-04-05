@@ -26,19 +26,19 @@ module.exports = (sequelize, DataTypes) => {
       });
       
 
-    Estabelecimento.hasMany(models.Telefone,{
-      as: 'estabelecimento-telefone',
-      foreignKey: 'estabelecimentos_id',
-      onDelete: 'RESTRICT',
-      onUpdate: 'NO ACTION',
-    });
+      Estabelecimento.hasMany(models.Telefone,{
+        as: 'estabelecimento-telefone',
+        foreignKey: 'estabelecimentos_id',
+        onDelete: 'RESTRICT',
+        onUpdate: 'NO ACTION',
+      });
 
-    Estabelecimento.hasMany(models.Endereco, {
-      as: 'estabelecimento_endereco',
-      foreignKey: 'estabelecimento_id',
-      onDelete: 'CASCADE',
-      onUpdate: 'NO ACTION',
-    });
+      Estabelecimento.hasMany(models.Endereco, {
+        as: 'estabelecimento_endereco',
+        foreignKey: 'estabelecimento_id',
+        onDelete: 'CASCADE',
+        onUpdate: 'NO ACTION',
+      });
   } 
   }
   Estabelecimento.init({
@@ -57,7 +57,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull:false,
     },
     sobre_seu_negocio:{
-      type:DataTypes.STRING(100),
+      type:DataTypes.TEXT,
     }, 
     responsavel_pela_casa:{
       type: DataTypes.STRING(100),
