@@ -1,11 +1,12 @@
 const express = require('express');
+const uploadFotos = require('../middlewares/uploadFotos')
 
 const musicosController = require('../controllers/musicosController');
 
 const router = express.Router();
 
 router.get('/cadastrar', musicosController.exibeFormularioCadastroMusico);
-router.post('/cadastrar', musicosController.cadastrar);
+router.post('/cadastrar', uploadFotos, musicosController.cadastrar);
 
 
 router.get('/login', musicosController.exibeFormulariologinMusico);

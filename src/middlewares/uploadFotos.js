@@ -3,4 +3,4 @@ const multerConfig = require('../config/multer');
 
 const upload = multer(multerConfig);
 
-module.exports = upload.single('foto');
+module.exports = upload.single('foto_perfil');

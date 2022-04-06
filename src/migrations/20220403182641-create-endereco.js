@@ -9,41 +9,41 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       logradouro:{
-        type: DataTypes.STRING(100),
+        type: Sequelize.STRING(100),
         allowNull: false,
       },
       numero:{
-        type: DataTypes.STRING(10),
+        type: Sequelize.STRING(10),
         allowNull: false,
       },
       complemento:{
-        type:  DataTypes.STRING(100),
+        type:  Sequelize.STRING(100),
       },
       cep:{
-        type: DataTypes.STRING(8),
+        type: Sequelize.STRING(8),
         allowNull:false,
       },
       bairro:{
-        type: DataTypes.STRING(100),
+        type: Sequelize.STRING(100),
         allowNull: false,
       },
       cidade:{
-        type: DataTypes.STRING(100),
+        type: Sequelize.STRING(100),
         allowNull: false,
       },
       uf:{
-        type: DataTypes.STRING(2),
+        type: Sequelize.STRING(2),
         allowNull: false,
       },
       estabelecimentos_id:{
-        type: DataTypes.INTEGER,
+        type: Sequelize.INTEGER,
         references: {
           model:'estabelecimentos',
           key:'id'
         }
       },
       musicos_id:{
-        type: DataTypes.INTEGER,
+        type: Sequelize.INTEGER,
         references: {
           model:'musicos',
           key:'id'

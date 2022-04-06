@@ -8,11 +8,12 @@ const saltRounds = 10;
 
 const musicosController = {
     cadastrar: async (req, res) => {
+        try{
         const {nome_completo, nome_artistico, cpf, sobre_vc, email, data_nascimento, cidade, estado, estilo_musical, senha } = req.body;
         const foto_perfil = req.file.filename;
 
         const hash = bcrypt.hashSync(senha, saltRounds);
-        try{
+
 
         const novoMusico = await Musico.create({
             nome_completo: nome_completo,
@@ -27,11 +28,11 @@ const musicosController = {
             estilo_musical: estilo_musical,
             senha: hash,
         });
-        } catch (error){
-            console.error(error)
-        }
 
         res.send(novoMusico);
+    } catch (error){
+        console.error(error)
+    }
 
     },
     

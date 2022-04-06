@@ -20,5 +20,8 @@
     "sequelize": "^6.18.0",
     "uuid": "^8.3.2",
     "uuidv4": "^6.2.12"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^6.4.1"
   }
 }

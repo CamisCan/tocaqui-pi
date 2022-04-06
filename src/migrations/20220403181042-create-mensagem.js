@@ -17,14 +17,14 @@ module.exports = {
         allowNull: false,
       },
       estabelecimentos_id:{
-        type:DataTypes.INTEGER,
+        type: Sequelize.INTEGER,
         references: {
           model: 'estabelecimentos',
           key: 'id'
         }
       },
       musicos_id:{
-        type:DataTypes.INTEGER,
+        type: Sequelize.INTEGER,
         references: {
           model: 'musicos',
           key: 'id'

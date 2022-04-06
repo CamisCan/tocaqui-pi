@@ -9,22 +9,22 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       ddd:{
-        type:DataTypes.STRING(2),
+        type: Sequelize.STRING(2),
         allowNull: false,
       },
       telefone: {
-        type:DataTypes.STRING(9),
+        type: Sequelize.STRING(9),
         allowNull: false,
       },
       estabelecimentos_id:{
-        type:DataTypes.INTEGER,
+        type: Sequelize.INTEGER,
         references: {
           model: 'estabelecimentos',
           key: 'id'
         }
       },
       musicos_id:{
-        type:DataTypes.INTEGER,
+        type: Sequelize.INTEGER,
         references: {
           model: 'musicos',
           key: 'id'

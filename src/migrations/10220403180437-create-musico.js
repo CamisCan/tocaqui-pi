@@ -18,13 +18,18 @@ module.exports = {
         allowNull: false,
         unique:true,
       },
-      nome_artisitico: {
+      nome_artistico: {
         type: Sequelize.STRING(45),
         allowNull: false,
         unique:true,
       },
       data_nascimento: {
         type: Sequelize.DATE,
+        allowNull: false,
+        unique:false,
+      },
+      sobre_vc: {
+        type: Sequelize.TEXT,
         allowNull: false,
         unique:false,
       },
