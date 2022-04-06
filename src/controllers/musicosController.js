@@ -10,7 +10,6 @@ const musicosController = {
     cadastrar: async (req, res) => {
         const {nome_completo, nome_artistico, cpf, sobre_vc, email, data_nascimento, cidade, estado, estilo_musical, senha } = req.body;
         const foto_perfil = req.file.filename;
-
         const hash = bcrypt.hashSync(senha, saltRounds);
         try{
 
