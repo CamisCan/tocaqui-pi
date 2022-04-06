@@ -16,7 +16,6 @@ module.exports = (sequelize, DataTypes) => {
         onDelete: 'CASCATE',
         onUpdate: 'CASCATE'
       });
-
       Usuario.hasMany(models.Estabelecimento, {
         as: 'usuario_estabelecimento',
         foreignKey: 'estabeleciemento_id',
@@ -55,6 +54,5 @@ module.exports = (sequelize, DataTypes) => {
     freezeTableName: true,
     timestamps: false
   });
-  
   return Usuario;
 };
