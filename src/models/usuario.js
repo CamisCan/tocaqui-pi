@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       Usuario.hasMany(models.Musico, {
         as: 'usuario_musico',
-        foreignKey: 'usuario_id',
+        foreignKey: 'musico_id',
         onDelete: 'CASCATE',
         onUpdate: 'CASCATE'
       });
@@ -22,23 +22,23 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'estabeleciemento_id',
         onDelete: 'CASCATE',
         onUpdate: 'CASCATE'
-      });
-    };
+     });
+  };
   
   }
-  Usuario.init({
+    Usuario.init({
       foto_perfil: {
-      Type: DataTypes.STRING(255),
+      type: DataTypes.STRING(255),
       allowNull: false,
       unique:false,
     },
     email: {
-      Type: DataTypes.STRING(255),
+      type: DataTypes.STRING(255),
       allowNull: false,
       unique:true,
     },
     senha: {
-      Type: DataTypes.STRING(255),
+      type: DataTypes.STRING(255),
       allowNull: false,
       unique:false,
     },

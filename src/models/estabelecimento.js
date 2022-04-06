@@ -17,15 +17,6 @@ module.exports = (sequelize, DataTypes) => {
         onUpdate: 'CASCATE',
       });
       
-      Estabelecimento.hasOne(models.Mensagem, {
-        as: 'estabelecimento_mensagem',
-        foreignKey: 'enviado_por',
-        foreignKey: 'recebido_por',
-        onDelete: 'RESTRICT',
-        onUpdate: 'NO ACTION'
-      });
-      
-
       Estabelecimento.hasMany(models.Telefone,{
         as: 'estabelecimento-telefone',
         foreignKey: 'estabelecimentos_id',
@@ -36,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
       Estabelecimento.hasMany(models.Endereco, {
         as: 'estabelecimento_endereco',
         foreignKey: 'estabelecimento_id',
-        onDelete: 'CASCADE',
+        onDelete: 'RESTRICT',
         onUpdate: 'NO ACTION',
       });
   } 

@@ -16,7 +16,17 @@ module.exports = (sequelize, DataTypes) => {
         onDelete: 'CASCADE',
         onUpdate: 'NO ACTION',
       });
+
+      {
+        Endereco.belongsTo(models.Musico, {
+          as: 'endereco_musico',
+          foreignKey: 'musico_id',
+          onDelete: 'CASCADE',
+          onUpdate: 'NO ACTION',
+        });
+      }
     }
+  
   }
   Endereco.init({
     logradouro:{

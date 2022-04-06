@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
     });
     
     Musico.hasMany(models.Telefone,{
-      as: 'musicos-telefone',
+      as: 'musicos_telefone',
       foreignKey: 'musicos_id',
       onDelete: 'RESTRICT',
       onUpdate: 'NO ACTION',
@@ -28,21 +28,45 @@ module.exports = (sequelize, DataTypes) => {
     Musico.hasMany(models.Endereco, {
       as: 'musicos_endereco',
       foreignKey: 'musicos_id',
-      onDelete: 'CASCADE',
+      onDelete: 'RESTRICT',
       onUpdate: 'NO ACTION',
     });
     }
+    
     }
     Musico.init({
-      nome_completo: DataTypes.STRING(255),
-      cpf: DataTypes.STRING(11),
-      nome_artistico: DataTypes.STRING(45),
-      sobre_vc: DataTypes.TEXT,
-      data_nascimento: DataTypes.DATEONLY,
-      estilo_musical: DataTypes.STRING
-    }, 
-    
-    {
+      nome_completo: {
+        type: DataTypes.STRING(255),
+        allowNull: true,
+        unique: false,
+      },
+
+      cpf: {
+        type: DataTypes.STRING(11),
+        allowNull: false,
+        unique: true,
+      },
+      nome_artistico: {
+        type: DataTypes.STRING(45),
+        allowNull: false,
+        unique: false,
+      },
+      sobre_vc: {
+        type: DataTypes.TEXT,
+        allowNull: true,
+        unique: false,
+      },
+      data_nascimento: {
+        type: DataTypes.DATEONLY,
+        allowNull: false,
+        unique: false,
+      },
+      estilo_musical: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: false,
+    },
+  }, {
     sequelize,
     modelName: 'Musico',
     tableName: 'musicos',

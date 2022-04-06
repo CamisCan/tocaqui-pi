@@ -10,35 +10,36 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-    Mensagem.belongsTo(models.Musico,{
-      as: 'mensagem_musico',
-      ForeignKey: 'enviado_por',
-      ForeignKey: 'recebido_por',
+    Mensagem.belongsTo(models.Usuario,{
+      foreignKey: 'enviado_por',
+      onDelete: 'RESTRICT',
+      onUpdate: 'NO ACTION'
+    })
+    Mensagem.belongsTo(models.Usuario,{
+      foreignKey: 'recebido_por',
       onDelete: 'RESTRICT',
       onUpdate: 'NO ACTION'
     })
     };
-
-    static associate(models) {
-      Mensagem.belongsTo(models.Estabelecimento,{
-        as: 'mensagem_estabelecimento',
-        ForeignKey: 'enviado_por',
-        ForeignKey: 'recebido_por',
-        onDelete: 'RESTRICT',
-        onUpdate: 'NO ACTION'
-      })
-      };
-      
   }
   Mensagem.init({
-    mensagem: DataTypes.TEXT(),
-    data: DataTypes.DATE(10)
+    mensagem: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+      unique: false,
+    },
+
+    data: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      unique: false,
+    },
   }, {
     sequelize,
     modelName: 'Mensagem',
     tableName: 'mensagens',
     freezeTableName: true,
-    timestamps: false
+    timestamps: false,
   });
   return Mensagem;
 };

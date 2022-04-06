@@ -8,7 +8,6 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-<<<<<<< HEAD
       razao_social: {
         type: Sequelize.STRING(100),
         allowNull: false,
@@ -33,7 +32,6 @@ module.exports = {
       site: {
         type: Sequelize.STRING(100),
       },
-=======
       razao_social:{
         type: Sequelize.STRING(100),
         allowNull: false,
@@ -58,7 +56,6 @@ module.exports = {
       site:{
         type: Sequelize.STRING(100),
       },
->>>>>>> 3c5046c444dbf328bde67bef1ac5e746e54f2180
     });
   },
   async down(queryInterface, Sequelize) {
