@@ -54,6 +54,12 @@ router.get('/estebelecimento/perfil-estabelecimento',  (req, res) => {
     res.render('perfil-estabelecimento')
 });
 
+router.get('/lista-musicos',  (req, res) => {
+    res.render('lista-musicos')
+});
 
+router.get('/lista-estabelecimentos',  (req, res) => {
+    res.render('lista-estabelecimentos')
+});
 
 module.exports = router;

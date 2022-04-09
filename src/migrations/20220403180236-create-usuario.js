@@ -10,18 +10,18 @@ module.exports = {
       },
       foto_perfil: {
         type: Sequelize.STRING(255),
-        allowNull: false,
-        unique:false,
+        allowNull: true,
+        unique: false,
       },
       email: {
         type: Sequelize.STRING(100),
         allowNull: false,
-        unique:true,
+        unique: true,
       },
       senha: {
         type: Sequelize.STRING(255),
         allowNull: false,
-        unique:false,
+        unique: false,
       },
         estabelecimentos_id:{
           type:Sequelize.INTEGER,

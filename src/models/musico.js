@@ -12,27 +12,26 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
     Musico.belongsTo(models.Usuario, {
-      as: 'musico_usuario',
+      as: 'usuario',
       foreignKey: 'usuario_id',
       onDelete: 'CASCATE',
       onUpdate: 'CASCATE',
     });
     
-    Musico.hasMany(models.Telefone,{
-      as: 'musicos_telefone',
+    Musico.belongsTo(models.Telefone,{
+      as: 'telefones',
       foreignKey: 'musicos_id',
       onDelete: 'RESTRICT',
       onUpdate: 'NO ACTION',
     });
     
-    Musico.hasMany(models.Endereco, {
-      as: 'musicos_endereco',
+    Musico.belongsTo(models.Endereco, {
+      as: 'enderecos',
       foreignKey: 'musicos_id',
       onDelete: 'RESTRICT',
       onUpdate: 'NO ACTION',
     });
     }
-    
     }
     Musico.init({
       nome_completo: {

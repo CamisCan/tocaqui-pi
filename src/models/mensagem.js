@@ -10,12 +10,12 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-    Mensagem.belongsTo(models.Usuario,{
+    Mensagem.hasMany(models.Usuario,{
       foreignKey: 'enviado_por',
       onDelete: 'RESTRICT',
       onUpdate: 'NO ACTION'
     })
-    Mensagem.belongsTo(models.Usuario,{
+    Mensagem.hasMany(models.Usuario,{
       foreignKey: 'recebido_por',
       onDelete: 'RESTRICT',
       onUpdate: 'NO ACTION'
@@ -34,6 +34,16 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       unique: false,
     },
+  estabelecimentos_id:{
+    type: DataTypes.INTEGER,
+    model: 'estabelecimentos',
+    key: 'id'
+  },
+  musicos_id:{
+    type: DataTypes.INTEGER,
+    model: 'musicos',
+    key: 'id'
+  }, 
   }, {
     sequelize,
     modelName: 'Mensagem',

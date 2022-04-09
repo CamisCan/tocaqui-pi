@@ -10,42 +10,45 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Usuario.hasMany(models.Musico, {
-        as: 'usuario_musico',
-        foreignKey: 'musico_id',
+      Usuario.belongsTo(models.Musico, {
+        foreignKey: 'musicos_id',
         onDelete: 'CASCATE',
         onUpdate: 'CASCATE'
       });
-      Usuario.hasMany(models.Estabelecimento, {
-        as: 'usuario_estabelecimento',
-        foreignKey: 'estabeleciemento_id',
+      Usuario.belongsTo(models.Estabelecimento, {
+        as: 'estabelecimento',
+        foreignKey: 'estabeleciementos_id',
         onDelete: 'CASCATE',
         onUpdate: 'CASCATE'
      });
   };
-  
   }
     Usuario.init({
       foto_perfil: {
       type: DataTypes.STRING(255),
-      allowNull: false,
-      unique:false,
+      allowNull: true,
+      unique: false,
     },
     email: {
       type: DataTypes.STRING(255),
       allowNull: false,
-      unique:true,
+      unique: true,
     },
     senha: {
       type: DataTypes.STRING(255),
       allowNull: false,
       unique:false,
     },
+    
     estabelecimentos_id:{
-      type:DataTypes.INTEGER,
+      type: DataTypes.INTEGER,
+      model: 'estabelecimentos',
+      key: 'id'
     },
     musicos_id:{
-      type:DataTypes.INTEGER,
+      type: DataTypes.INTEGER,
+      model: 'musicos',
+      key: 'id'
     }, 
   },{
     sequelize,

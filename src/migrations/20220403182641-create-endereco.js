@@ -10,22 +10,18 @@ module.exports = {
       },
       logradouro:{
         type: Sequelize.STRING(100),
-        allowNull: false,
       },
       numero:{
         type: Sequelize.STRING(10),
-        allowNull: false,
       },
       complemento:{
         type:  Sequelize.STRING(100),
       },
       cep:{
         type: Sequelize.STRING(8),
-        allowNull:false,
       },
       bairro:{
         type: Sequelize.STRING(100),
-        allowNull: false,
       },
       cidade:{
         type: Sequelize.STRING(100),

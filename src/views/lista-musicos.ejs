@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/lista-musicos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Perfil Musico</title>
+</head>
+
+<body>
+<%- include('./partials/header')%>
+<main>
+
+    <div class="titulo">
+        <h1>Muitas opções de músicos para você escolher:</h1>
+    </div>
+    <div class="grade-musicos">
+
+        <div class="musico-1">
+                <img class="foto" src="./img/foto-perfil.png" alt="">
+                <h3 class="nome-musico">Bob</h3>
+                <p class="descricao">Is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                <p class="cidade">São Paulo</p>
+                <p class="estado">SP</p>
+                <p class="estilo-musical">Rock</p>
+            <form class="form">
+                <textarea class="campo-texto" name="sobre_vc" id="sobre_vc" cols="30" rows="10" placeholder="Envie uma mensagem para o múciso..." required></textarea><br>
+                <button class="enviar">Enviar!</button>
+            </form>
+        </div>
+
+        <div class="musico-2">
+            <img class="foto" src="./img/foto-perfil.png" alt="">
+            <h3 class="nome-musico">Bob</h3>
+            <p class="descricao">Is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+            <p class="cidade">São Paulo</p>
+            <p class="estado">SP</p>
+            <p class="estilo-musical">Rock</p>
+        <form class="form">
+            <textarea class="campo-texto" name="sobre_vc" id="sobre_vc" cols="30" rows="10" placeholder="Envie uma mensagem para o múciso..." required></textarea><br>
+            <button class="enviar">Enviar!</button>
+        </form>
+    </div>
+
+    <div class="musico-3">
+        <img class="foto" src="./img/foto-perfil.png" alt="">
+        <h3 class="nome-musico">Bob</h3>
+        <p class="descricao">Is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+        <p class="cidade">São Paulo</p>
+        <p class="estado">SP</p>
+        <p class="estilo-musical">Rock</p>
+    <form class="form">
+        <textarea class="campo-texto" name="sobre_vc" id="sobre_vc" cols="30" rows="10" placeholder="Envie uma mensagem para o múciso..." required></textarea><br>
+        <button class="enviar">Enviar!</button>
+    </form>
+</div>
+
+<div class="musico-3">
+    <img class="foto" src="./img/foto-perfil.png" alt="">
+    <h3 class="nome-musico">Bob</h3>
+    <p class="descricao">Is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+    <p class="cidade">São Paulo</p>
+    <p class="estado">SP</p>
+    <p class="estilo-musical">Rock</p>
+<form class="form">
+    <textarea class="campo-texto" name="sobre_vc" id="sobre_vc" cols="30" rows="10" placeholder="Envie uma mensagem para o múciso..." required></textarea><br>
+    <button class="enviar">Enviar!</button>
+</form>
+</div>
+
+    </div>
+</main>
+<%- include('./partials/footer')%>
+</body>
+</html>

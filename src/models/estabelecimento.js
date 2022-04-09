@@ -14,17 +14,17 @@ module.exports = (sequelize, DataTypes) => {
         as: 'estabelecimento_usuario',
         foreignKey: 'usuario_id',
         onDelete: 'CASCATE',
-        onUpdate: 'CASCATE',
+        onUpdate: 'CASCATE', 
       });
       
-      Estabelecimento.hasMany(models.Telefone,{
+      Estabelecimento.belongsTo(models.Telefone,{
         as: 'estabelecimento-telefone',
         foreignKey: 'estabelecimentos_id',
         onDelete: 'RESTRICT',
         onUpdate: 'NO ACTION',
       });
 
-      Estabelecimento.hasMany(models.Endereco, {
+      Estabelecimento.belongsTo(models.Endereco, {
         as: 'estabelecimento_endereco',
         foreignKey: 'estabelecimento_id',
         onDelete: 'RESTRICT',
@@ -36,26 +36,37 @@ module.exports = (sequelize, DataTypes) => {
     razao_social:{
       type: DataTypes.STRING(100),
       allowNull: false,
-      unique:true,
+      unique: true,
     },
     cnpj:{
       type: DataTypes.STRING(14),
       allowNull: false,
-      unique:true,
+      unique: true,
     },
     nome_fantasia:{
-      type:DataTypes.STRING(100),
-      allowNull:false,
-    },
-    sobre_seu_negocio:{
-      type:DataTypes.TEXT,
-    }, 
-    responsavel_pela_casa:{
       type: DataTypes.STRING(100),
       allowNull: false,
+      unique: false,
+    },
+    sobre_seu_negocio:{
+      type: DataTypes.TEXT,
+      allowNull: false,
+      unique: false,
+    }, 
+    responsavel:{
+      type: DataTypes.STRING(100),
+      allowNull: false,
+      unique: false,
+    },
+    tel:{
+      type: DataTypes.STRING(100),
+      allowNull: false,
+      unique: false,
     },
     site:{
       type: DataTypes.STRING(100),
+      allowNull: true,
+      unique: true,
     },
   }, {
     sequelize,

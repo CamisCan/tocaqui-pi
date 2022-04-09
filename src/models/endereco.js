@@ -10,15 +10,14 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Endereco.belongsTo(models.Estabelecimento, {
+      Endereco.hasMany(models.Estabelecimento, {
         as: 'endereco_estabelecimento',
         foreignKey: 'estabelecimentos_id',
         onDelete: 'CASCADE',
         onUpdate: 'NO ACTION',
       });
-
       {
-        Endereco.belongsTo(models.Musico, {
+        Endereco.hasMany(models.Musico, {
           as: 'endereco_musico',
           foreignKey: 'musico_id',
           onDelete: 'CASCADE',
@@ -32,35 +31,47 @@ module.exports = (sequelize, DataTypes) => {
     logradouro:{
       type: DataTypes.STRING(100),
       allowNull: false,
+      unique: false,
     },
     numero:{
       type: DataTypes.STRING(10),
       allowNull: false,
+      unique: false,
     },
     complemento:{
-      type:  DataTypes.STRING(100),
+      type: DataTypes.STRING(100),
+      allowNull: false,
+      unique: false,
     },
     cep:{
       type: DataTypes.STRING(8),
-      allowNull:false,
+      allowNull: false,
+      unique: false,
     },
     bairro:{
       type: DataTypes.STRING(100),
       allowNull: false,
+      unique: false,
     },
     cidade:{
       type: DataTypes.STRING(100),
       allowNull: false,
+      unique: false,
     },
     uf:{
       type: DataTypes.STRING(2),
       allowNull: false,
+      unique: false,
     },
     estabelecimentos_id:{
       type: DataTypes.INTEGER,
+      model: 'estabelecimentos',
+      key: 'id'
     },
     musicos_id:{
       type: DataTypes.INTEGER,
+      model: 'musicos',
+      key: 'id'
     },
   }, {
     sequelize,

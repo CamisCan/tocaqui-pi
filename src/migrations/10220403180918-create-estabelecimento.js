@@ -21,41 +21,28 @@ module.exports = {
       nome_fantasia: {
         type: Sequelize.STRING(100),
         allowNull: false,
-        unique:true,
+        unique: false,
       },
       sobre_seu_negocio: {
         type: Sequelize.TEXT,
+        allowNull: false,
+        unique: false,
       },
-      responsavel_pela_casa: {
+      responsavel:{
         type: Sequelize.STRING(100),
+        allowNull: false,
+        unique: false,
+      },
+      tel:{
+        type: Sequelize.STRING(100),
+        allowNull: false,
+        unique: false,
       },
       site: {
         type: Sequelize.STRING(100),
-      },
-      razao_social:{
-        type: Sequelize.STRING(100),
-        allowNull: false,
-        unique:true,
-      },
-      cnpj:{
-        type: Sequelize.STRING(14),
-        allowNull: false,
-        unique:true,
-      },
-      nome_fantasia:{
-        type:Sequelize.STRING(100),
-        allowNull:false,
-      },
-      sobre_seu_negocio:{
-        type:Sequelize.TEXT,
-      }, 
-      responsavel_pela_casa:{
-        type: Sequelize.STRING(100),
-        allowNull: false,
-      },
-      site:{
-        type: Sequelize.STRING(100),
-      },
+        allowNull: true,
+        unique: true,
+      }
     });
   },
   async down(queryInterface, Sequelize) {

@@ -2,33 +2,41 @@ const fs =require('fs');
 const path = require('path');
 const bcrypt = require('bcrypt'); 
 
-const { Estabelecimento } = require('../models')
+const { Estabelecimento } = require('../models');
+const usuario = require('../models/usuario');
 
 const saltRounds = 10;
 
 const estabelecimentosController = {
     cadastrar: async (req, res) => {
-        const {razao_social, cnpj, nome_fantasia, sobre_esta, responsavel, email, tel, site, cidade, estado, senha} = req.body;
+        try{
+        const {razao_social, cnpj, nome_fantasia, sobre_seu_negocio, responsavel, email, tel, site, cidade, estado, senha } = req.body;
         const foto_perfil = req.file.filename;
-
-        const hash = bcrypt.hashSync(req.body.senha, saltRounds);
+        const hash = bcrypt.hashSync(senha, saltRounds);
     
         const novoEstabelecimento = await Estabelecimento.create({
             razao_social: razao_social,
             cnpj: cnpj,
             foto_perfil: foto_perfil,
             nome_fantasia: nome_fantasia,
-            sobre_esta: sobre_esta,
+            sobre_seu_negocio: sobre_seu_negocio,
             responsavel: responsavel,
             email: email,
             tel: tel,
-            site: site,
+            site: site, 
             cidade: cidade,
-            estado: estado,
+            estado: estado, 
             senha: hash,
+
+        },{
+            include: ['usuarios']
         });
 
+
         res.send(novoEstabelecimento);
+    } catch (error){
+        console.error(error)
+    }
     },
 
     exibeFormularioCadastroEstabelecimento: (req, res) => {

@@ -37,8 +37,9 @@
 
         <div class="sou-novo">
         <div><h2>Sou novo por aqui e quero me tornar um parceiro</h2></div>
-        <form 
-        action="/estabelecimento/cadastrar" method="post" class="form-1">
+        <form enctype="multipart/form-data" action="/estabelecimento/cadastrar" method="post" class="form-1">
+            <div>
+
             <label>Razão social:</label>
             <input type="text" name="razao_social" id="razao_social">
 
@@ -48,11 +49,11 @@
             <label>Nome fantasia:</label>
             <input type="text" name="nome_fantasia" id="nome_fantasia">
 
-            <label class="sobre_esta">Fale um pouco sobre o seu estabelecimento:</label><br>
-            <textarea class="caixa-texto" name="sobre_esta" id="sobre_esta" cols="30" rows="10" placeholder="   O meu estabelecimento..." required></textarea><br>
+            <label class="sobre_seu_negocio">Fale um pouco sobre o seu estabelecimento:</label><br>
+            <textarea class="caixa-texto" name="sobre_seu_negocio" id="sobre_seu_negocio" cols="30" rows="10" placeholder="   O meu estabelecimento..." required></textarea><br>
 
             <label>Foto de perfil:</label>
-            <input type="file" name="foto_perfil" id="foto_perfil" required><br>
+            <input type="file" name="foto_perfil" id="foto_perfil"><br>
 
             <label>Email:</label>
             <input type="email" name="email" id="email" required>
