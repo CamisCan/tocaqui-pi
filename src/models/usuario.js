@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
       });
       Usuario.belongsTo(models.Estabelecimento, {
         as: 'estabelecimento',
-        foreignKey: 'estabeleciementos_id',
+        foreignKey: 'estabelecimentos_id',
         onDelete: 'CASCATE',
         onUpdate: 'CASCATE'
      });

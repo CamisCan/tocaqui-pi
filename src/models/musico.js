@@ -12,8 +12,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
     Musico.hasOne(models.Usuario, {
-      as: 'usuario',
-      foreignKey: 'usuario_id',
+      as: 'musico_usuario',
+      foreignKey: 'musicos_id',
       onDelete: 'CASCATE',
       onUpdate: 'CASCATE',
     });

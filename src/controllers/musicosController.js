@@ -65,9 +65,10 @@ const musicosController = {
     },
 
     fazerLoginMusico: async (req, res) => {
-        const { usuario, senha } = req.body;
+        try {
+        const { email, senha } = req.body;
 
-        const meuMusico = await Musico.findOne({ where: {  email: usuario } });
+        const meuMusico = await Usuario.findOne({ where: { email } });
 
         if (!meuMusico) 
         return res.render('error');
@@ -84,6 +85,10 @@ const musicosController = {
         console.log(req.session)
 
         res.render('perfil-musico')
+    } catch (erro){
+        console.trace(erro)
+        res.send(erro)
+    }
     },
 };
 

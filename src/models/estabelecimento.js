@@ -12,13 +12,13 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       Estabelecimento.hasOne(models.Usuario, {
         as: 'estabelecimento_usuario',
-        foreignKey: 'usuario_id',
+        foreignKey: 'estabelecimentos_id',
         onDelete: 'CASCATE',
         onUpdate: 'CASCATE', 
       });
       
       Estabelecimento.hasMany(models.Telefone,{
-        as: 'estabelecimento-telefone',
+        as: 'estabelecimento_telefone',
         foreignKey: 'estabelecimentos_id',
         onDelete: 'RESTRICT',
         onUpdate: 'NO ACTION',
@@ -26,7 +26,7 @@ module.exports = (sequelize, DataTypes) => {
 
       Estabelecimento.hasMany(models.Endereco, {
         as: 'estabelecimento_endereco',
-        foreignKey: 'estabelecimento_id',
+        foreignKey: 'estabelecimentos_id',
         onDelete: 'RESTRICT',
         onUpdate: 'NO ACTION',
       });
