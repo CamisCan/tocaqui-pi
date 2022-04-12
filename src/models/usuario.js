@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       Usuario.belongsTo(models.Musico, {
+        as: 'musico',
         foreignKey: 'musicos_id',
         onDelete: 'CASCATE',
         onUpdate: 'CASCATE'

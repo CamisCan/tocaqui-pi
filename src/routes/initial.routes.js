@@ -46,10 +46,6 @@ router.get('/estabelecimento-criado',  (req, res) => {
     res.render('estabelecimento-criado')
 });
 
-router.get('/musico/perfil-musico',  (req, res) => {
-    res.render('perfil-musico')
-});
-
 router.get('/estebelecimento/perfil-estabelecimento',  (req, res) => {
     res.render('perfil-estabelecimento')
 });

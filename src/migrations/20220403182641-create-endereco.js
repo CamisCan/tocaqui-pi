@@ -25,11 +25,11 @@ module.exports = {
       },
       cidade:{
         type: Sequelize.STRING(100),
-        allowNull: false,
+
       },
       uf:{
         type: Sequelize.STRING(2),
-        allowNull: false,
+
       },
       estabelecimentos_id:{
         type: Sequelize.INTEGER,

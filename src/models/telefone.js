@@ -8,30 +8,18 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Telefone.hasMany(models.Estabelecimento,{
+      Telefone.belongsTo(models.Estabelecimento,{
         as:'estabelecimento',
         foreignKey: 'estabelecimentos_id',
         onDelete: 'RESTRICT',
         onUpdate: 'NO ACTION'
       });
-      
-      Telefone.hasMany(models.Musico, {
-        as: 'musico',
-        foreignKey: 'musico_id',
-        onDelete: 'CASCADE',
-        onUpdate: 'NO ACTION',
-      });
+  
     }
   }
   Telefone.init({
-    ddd:{
-      type: DataTypes.STRING(2),
-      allowNull: false,
-      unique: false,
-    },
     telefone: {
       type: DataTypes.STRING(9),
-      allowNull: false,
       unique: false,
     },
     estabelecimentos_id:{

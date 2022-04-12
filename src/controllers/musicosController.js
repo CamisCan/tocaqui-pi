@@ -2,7 +2,7 @@ const fs =require('fs');
 const path = require('path');
 const bcrypt = require('bcrypt'); 
 
-const { Usuario, Musico, Endereco, Telefone } = require('../models');
+const { Usuario, Musico, Endereco, } = require('../models');
 
 const saltRounds = 10;
 
@@ -20,8 +20,6 @@ const musicosController = {
             estilo_musical, 
             senha, 
             uf, 
-            ddd,
-            telefone,
         } = req.body;
 
         const foto_perfil = req.file.filename;
@@ -36,30 +34,22 @@ const musicosController = {
                 sobre_vc: sobre_vc,
                 data_nascimento: data_nascimento,
                 estilo_musical: estilo_musical,
+                enderecos: [{
+                    cidade: cidade,
+                    uf: uf,
+                }],
             },
-
-            // enderecos: [{
-            //     cidade: cidade,
-            //     uf: uf,
-            // }],
-            
-            // telefones: [{
-            //     ddd: ddd,
-            //     telefone: telefone,
-            // }],
-
-                foto_perfil: foto_perfil,
-                email: email,
-                senha: hash,
+            foto_perfil: foto_perfil,
+            email: email,
+            senha: hash,
         },{
             include: [{
-                model: Musico, 
-                //include: [ Musico.Endereco, Musico.Telefone]
+                association: 'musico', 
+                include: ['enderecos'],
             }]
         });
-
-        res.send(novoMusico); 
-        res.redirect('musico-criado');
+        
+        res.render('musico-criado');
     } catch (error){
         console.error(error)
     }
@@ -82,7 +72,7 @@ const musicosController = {
         if (!meuMusico) 
         return res.render('error');
 
-        const senhaEstaCorreta = bcrypt.compareSync(req.body.senha, meuMusico.senha)
+        const senhaEstaCorreta = bcrypt.compareSync(senha, meuMusico.senha)
 
         if (!senhaEstaCorreta) {
         return res.render('error');
@@ -93,7 +83,7 @@ const musicosController = {
 
         console.log(req.session)
 
-        res.redirect('perfil-musico')
+        res.render('perfil-musico')
     },
 };
 

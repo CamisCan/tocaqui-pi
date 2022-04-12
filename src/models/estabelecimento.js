@@ -10,21 +10,21 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Estabelecimento.belongsTo(models.Usuario, {
+      Estabelecimento.hasOne(models.Usuario, {
         as: 'estabelecimento_usuario',
         foreignKey: 'usuario_id',
         onDelete: 'CASCATE',
         onUpdate: 'CASCATE', 
       });
       
-      Estabelecimento.belongsTo(models.Telefone,{
+      Estabelecimento.hasMany(models.Telefone,{
         as: 'estabelecimento-telefone',
         foreignKey: 'estabelecimentos_id',
         onDelete: 'RESTRICT',
         onUpdate: 'NO ACTION',
       });
 
-      Estabelecimento.belongsTo(models.Endereco, {
+      Estabelecimento.hasMany(models.Endereco, {
         as: 'estabelecimento_endereco',
         foreignKey: 'estabelecimento_id',
         onDelete: 'RESTRICT',

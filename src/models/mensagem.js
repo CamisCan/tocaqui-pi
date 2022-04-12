@@ -10,12 +10,12 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-    Mensagem.hasMany(models.Usuario,{
+    Mensagem.belongsTo(models.Usuario,{
       foreignKey: 'enviado_por',
       onDelete: 'RESTRICT',
       onUpdate: 'NO ACTION'
     })
-    Mensagem.hasMany(models.Usuario,{
+    Mensagem.belongsTo(models.Usuario,{
       foreignKey: 'recebido_por',
       onDelete: 'RESTRICT',
       onUpdate: 'NO ACTION'

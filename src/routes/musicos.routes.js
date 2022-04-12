@@ -12,8 +12,9 @@ router.post('/cadastrar', uploadFotos, musicosController.cadastrar);
 router.get('/login', musicosController.exibeFormulariologinMusico);
 router.post('/login', musicosController.fazerLoginMusico);
 
-router.get('/musico/perfil-musico',  (req, res) => {
-    res.render('/musico/perfil-musico')
+router.get('perfil-musico',  (req, res) => {
+    res.render('perfil-musico')
 });
+
 
 module.exports = router; 
