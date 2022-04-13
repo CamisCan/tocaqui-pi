@@ -33,11 +33,6 @@ module.exports = {
         allowNull: false,
         unique: false,
       },
-      tel:{
-        type: Sequelize.STRING(100),
-        allowNull: false,
-        unique: false,
-      },
       site: {
         type: Sequelize.STRING(100),
         allowNull: true,
