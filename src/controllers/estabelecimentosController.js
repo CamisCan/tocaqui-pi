@@ -2,41 +2,46 @@ const fs =require('fs');
 const path = require('path');
 const bcrypt = require('bcrypt'); 
 
-const { Estabelecimento } = require('../models');
-const usuario = require('../models/usuario');
+const { Usuario, Estabelecimento, Telefone, Endereco } = require('../models');
+
 
 const saltRounds = 10;
 
 const estabelecimentosController = {
     cadastrar: async (req, res) => {
-        try{
-        const {razao_social, cnpj, nome_fantasia, sobre_seu_negocio, responsavel, email, tel, site, cidade, estado, senha } = req.body;
+        
+        const {razao_social, cnpj, nome_fantasia, sobre_seu_negocio, responsavel, email, tel, site, cidade, uf, senha } = req.body;
         const foto_perfil = req.file.filename;
         const hash = bcrypt.hashSync(senha, saltRounds);
     
-        const novoEstabelecimento = await Estabelecimento.create({
-            razao_social: razao_social,
-            cnpj: cnpj,
+        const novoEstabelecimento = await Usuario.create({
+                estabelecimento:{
+                razao_social: razao_social,
+                cnpj: cnpj,            
+                nome_fantasia: nome_fantasia,
+                sobre_seu_negocio: sobre_seu_negocio,
+                responsavel: responsavel,
+                site: site,
+                enderecos:[{
+                    cidade: cidade,
+                    uf: uf,
+                }],
+                telefones:[{
+                    telefone: tel,
+                }],
+            },
             foto_perfil: foto_perfil,
-            nome_fantasia: nome_fantasia,
-            sobre_seu_negocio: sobre_seu_negocio,
-            responsavel: responsavel,
             email: email,
-            tel: tel,
-            site: site, 
-            cidade: cidade,
-            estado: estado, 
             senha: hash,
-
         },{
-            include: ['usuarios']
+            include: [{
+                association:'estabelecimento',
+                include:['enderecos', 'telefones',]
+            }],
         });
 
 
-        res.send(novoEstabelecimento);
-    } catch (error){
-        console.error(error)
-    }
+        res.render('estabelecimento-criado');
     },
 
     exibeFormularioCadastroEstabelecimento: (req, res) => {

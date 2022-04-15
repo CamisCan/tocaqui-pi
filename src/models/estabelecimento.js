@@ -11,21 +11,21 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       Estabelecimento.hasOne(models.Usuario, {
-        as: 'estabelecimento_usuario',
+        as: 'usuario',
         foreignKey: 'estabelecimentos_id',
         onDelete: 'CASCATE',
         onUpdate: 'CASCATE', 
       });
       
       Estabelecimento.hasMany(models.Telefone,{
-        as: 'estabelecimento_telefone',
+        as: 'telefones',
         foreignKey: 'estabelecimentos_id',
         onDelete: 'RESTRICT',
         onUpdate: 'NO ACTION',
       });
 
       Estabelecimento.hasMany(models.Endereco, {
-        as: 'estabelecimento_endereco',
+        as: 'enderecos',
         foreignKey: 'estabelecimentos_id',
         onDelete: 'RESTRICT',
         onUpdate: 'NO ACTION',
@@ -54,11 +54,6 @@ module.exports = (sequelize, DataTypes) => {
       unique: false,
     }, 
     responsavel:{
-      type: DataTypes.STRING(100),
-      allowNull: false,
-      unique: false,
-    },
-    tel:{
       type: DataTypes.STRING(100),
       allowNull: false,
       unique: false,
