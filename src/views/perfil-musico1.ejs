@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/perfil-musico.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    <title>Perfil Musico</title>
+</head>
+<body>
+<%- include('./partials/header')%>
+    <main>
+        <section>
+        <div class="minha-pagina">
+            <h1><%= usuarios.nome_artistico %></h1>
+        
+        <div class="perfil">
+            <div class="foto">
+                <img src="/img/foto-perfil-musico.png" alt="">
+            </div>
+            <h3 class="sobre-mim">Sobre mim</h3>
+            <p><%= usuarios.sobre_vc %>></p>
+        </section>
+        </div>
+
+        
+
+        <section class="ultimas-apresentacaoes">
+            <h3>Últimas apresentações</h3>
+
+            <div class="cards">
+
+                <div class="card-1">
+                <img src="/img/u-2.jpg" alt="">
+                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni.</p>
+                </div>
+
+                <div class="card-2">
+                <img src="/img/david-bowie.jpg" alt="">
+                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni.</p>
+                </div>
+
+                <div class="card-3">
+                <img src="/img/REM.jpg" alt="">
+                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="avaliacoes">
+            <h3>Suas avaliações</h3>
+
+            <div class="selos">
+
+                <div class="selo-1">
+                <img src="/img/perfil-1.png" alt="">
+                <div class="stars">
+                    <img src="/img/star-pink.svg" alt="">
+                    <img src="/img/star-pink.svg" alt="">
+                    <img src="/img/star-pink.svg" alt="">
+                    <img src="/img/star-gray.svg" alt="">
+                    <img src="/img/star-gray.svg" alt="">
+                </div>
+
+                <h4 class="nomes">Vini</h4>
+                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni.</p>
+                </div>
+
+                <div class="selo-2">
+                <img src="/img/perfil-2.png" alt="">
+                <div class="stars">
+                    <img src="/img/star-pink.svg" alt="">
+                    <img src="/img/star-pink.svg" alt="">
+                    <img src="/img/star-pink.svg" alt="">
+                    <img src="/img/star-gray.svg" alt="">
+                    <img src="/img/star-gray.svg" alt="">
+                </div>
+                <h4 class="nomes">Alex</h4>
+                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni.</p>
+                </div>
+
+                <div class="selo-3">
+                <img src="/img/perfil-3.png" alt="">
+                <div class="stars">
+                    <img src="/img/star-pink.svg" alt="">
+                    <img src="/img/star-pink.svg" alt="">
+                    <img src="/img/star-pink.svg" alt="">
+                    <img src="/img/star-gray.svg" alt="">
+                    <img src="/img/star-gray.svg" alt="">
+                </div>
+                <h4 class="nomes">Joe</h4>
+                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+    </main>
+<%- include('./partials/footer')%>
+</body>
+</html>

@@ -22,12 +22,12 @@
         <div class="parceiro">
         <div><h2>Já sou parceiro</h2></div>
             <div>
-                <form action="/musico/login" method="post" required>
+                <form action="/musico/login" method="post" id="login_musico">
                     <label>E-mail:</label>
-                    <input type="email" name="email" id="email" required>
+                    <input type="email" name="email" id="email">
 
                     <label>Digite sua senha</label>
-                    <input type="password" name="senha" id="senha" required>
+                    <input type="password" name="senha" id="senha">
                 
                 <p>Esqueceu sua senha? <a href="#">Clique aqui</a></p>
                 <button class="botao">Entrar!</button>
@@ -37,7 +37,7 @@
 
         <div class="sou-novo">
         <div><h2>Sou novo por aqui e quero me tornar um parceiro</h2></div>
-        <form enctype="multipart/form-data" action="/musico/cadastrar" method="post" class="formulario-1">
+        <form enctype="multipart/form-data" action="/musico/cadastrar" method="post" class="formulario-1" id="cadastro_musico" >
             <div>
             
             <label>Nome completo:</label>
@@ -139,5 +139,5 @@
 
 <%- include('./partials/footer')%>
 </body>
-<script src="/js/valida-form.js"></script>
+<script src="js/valida-form.js"></script>
 </html>

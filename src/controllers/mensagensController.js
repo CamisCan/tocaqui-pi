@@ -13,14 +13,8 @@ const mensagensController = {
             mensagem
         } = req.body;
 
-
-        const novaMensagem = await Mensagem.create({
-            mensagem: {
-                mensagem: mensagem,
-            },
-            include: [{
-                association: 'musico', 
-            }]
+        await Mensagem.create({
+            mensagem
         });
         
         res.send('mensagem enviada');
