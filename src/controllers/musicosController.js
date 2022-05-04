@@ -68,7 +68,12 @@ const musicosController = {
         try {
         const { email, senha } = req.body;
 
-        const meuMusico = await Usuario.findOne({ where: { email } });
+        const meuMusico = await Usuario.findOne({ where: { email } }
+        ,{
+            include: [{
+                association: 'musico', 
+            }]
+        });
 
         if (!meuMusico) 
         return res.render('error');
@@ -83,8 +88,9 @@ const musicosController = {
         req.session.musico = meuMusico;
 
         console.log(req.session)
+        console.log(meuMusico)
 
-        res.render('perfil-musico')
+        res.render('perfil-musico', { musico: meuMusico });
     } catch (erro){
         console.trace(erro)
         res.send(erro)
